@@ -9,12 +9,12 @@ export const Navbar = ({ selectedPage, setSelectedPage }) => {
 	const [isMenuToggled, setIsMenuToggled] = useState(false);
 	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 	const NavLinks = [
-		"HOME",
-		"EDUCATION",
-		"EXPERIENCE",
-		"PROJECTS",
-		"BLOG",
-		"CONTACT",
+		{ pageName: "HOME", id: "home" },
+		{ pageName: "EDUCATION", id: "education" },
+		{ pageName: "EXPERIENCE", id: "experience" },
+		{ pageName: "PROJECTS", id: "projects" },
+		{ pageName: "BLOG", id: "blog" },
+		{ pageName: "CONTACT", id: "contact" },
 	];
 	return (
 		<>
