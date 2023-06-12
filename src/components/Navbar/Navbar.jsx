@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { NavLink } from "./components";
@@ -10,6 +10,10 @@ import { MobileMenu } from "./components";
 export const Navbar = ({ selectedPage, setSelectedPage }) => {
 	const [isMenuToggled, setIsMenuToggled] = useState(false);
 	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+
+	useEffect(() => {
+		if (isAboveSmallScreens) setIsMenuToggled(false);
+	}, [isAboveSmallScreens]);
 
 	return (
 		<nav className="z-40 w-full fixed top-0">
@@ -23,11 +27,12 @@ export const Navbar = ({ selectedPage, setSelectedPage }) => {
 								selectedPage={selectedPage}
 								setSelectedPage={setSelectedPage}
 								isAboveSmallScreens={isAboveSmallScreens}
+								setIsMenuToggled={() => {}}
 							/>
 						))}
 					</div>
 				) : (
-					<button className="rounded-full text-white transition-all duration-1000 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125">
+					<button className="rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125">
 						<FaListAlt
 							size={45}
 							viewBox="40 40 430 430"

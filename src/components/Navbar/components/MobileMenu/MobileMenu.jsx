@@ -15,7 +15,7 @@ export const MobileMenu = ({
 		<div className="fixed top-0 w-full z-40 bg-white">
 			<div className="flex items-center justify-between mx-auto w-11/12 py-4 top-0">
 				<Logo height={50} width={50} className="hover:animate-spin" />
-				<button className="rounded-full text-white transition-all duration-1000 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125">
+				<button className="rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125">
 					<IoCloseCircle
 						size={47}
 						viewBox="60 60 400 400"
@@ -38,6 +38,7 @@ export const MobileMenu = ({
 					selectedPage={selectedPage}
 					setSelectedPage={setSelectedPage}
 					isAboveSmallScreens={isAboveSmallScreens}
+					setIsMenuToggled={setIsMenuToggled}
 				/>
 			))}
 		</div>

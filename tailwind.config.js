@@ -1,6 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
 	content: ["./src/**/*.{html,js,jsx}"],
+	safelist: [
+		"bg-[#cdc1ee]",
+		"bg-[#ccc9f1]",
+		"bg-[#cbd1f4]",
+		"bg-[#cad9f7]",
+		"bg-[#c9e2f8]",
+	],
 	mode: "jit", //just in time mode
 	theme: {
 		extend: {
@@ -39,4 +47,4 @@ module.exports = {
 		tall: { raw: "(min-height: 800px)" },
 	},
 	plugins: [],
-};
+});

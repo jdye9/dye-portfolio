@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { Navbar } from "./components";
+import { EducationPage, Navbar, LandingPage } from "./components";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { ButtonNav } from "components";
 import { navLinks } from "./constants";
-import { LandingPage } from "components/LandingPage/LandingPage";
-import { motion } from "framer-motion";
 
 export const App = () => {
 	const [selectedPage, setSelectedPage] = useState("home");
@@ -21,7 +19,9 @@ export const App = () => {
 					setSelectedPage={setSelectedPage}
 				/>
 			)}
+
 			<LandingPage setSelectedPage={selectedPage} />
+			<EducationPage />
 		</div>
 	);
 };

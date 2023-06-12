@@ -1,18 +1,38 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export const ButtonNav = ({ navLinks, selectedPage, setSelectedPage }) => {
+	const selectedPageIcon = (index) => (
+		<div
+			className={`transition duration-500 ease-in-out hover:scale-[130%] ${
+				index % 2 === 0 ? "hover:rotate-45" : "hover:-rotate-45"
+			}`}
+		>
+			<div className={`relative bg-white h-3 w-3`}>
+				<div
+					className={`absolute bg-gradient-to-br from-light-purple to-light-blue w-6 h-6 left-[-50%] top-[-50%] z-[-1]`}
+				></div>
+			</div>
+		</div>
+	);
+
+	const notSelectedPageIcon = (index) => (
+		<div
+			className={`relative transition duration-500 hover:scale-[130%] ${
+				index % 2 === 0 ? "hover:rotate-45" : "hover:-rotate-45"
+			} ease-in-out bg-gradient-to-br from-light-purple to-light-blue w-3 h-3`}
+		></div>
+	);
 	return (
 		<div className="fixed flex flex-col right-7 top-[45%] gap-6">
-			{navLinks.map((page) => (
+			{navLinks.map((page, index) => (
 				<AnchorLink
 					href={`#${page.id}`}
 					onClick={() => setSelectedPage(page.id)}
-					className={`${
-						selectedPage === page.id
-							? "relative rounded-full bg-white h-3 w-3 before:bg-gradient-to-br from-light-purple to-light-blue before:absolute before:w-6 before:h-6 before:left-[-50%] before:top-[-50%] before:z-[-1]"
-							: "bg-gradient-to-br from-light-purple to-light-blue w-3 h-3"
-					}`}
-				/>
+				>
+					{selectedPage === page.id
+						? selectedPageIcon(index)
+						: notSelectedPageIcon(index)}
+				</AnchorLink>
 			))}
 		</div>
 	);
