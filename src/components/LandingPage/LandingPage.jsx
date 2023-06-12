@@ -1,5 +1,5 @@
 import { useMediaQuery } from "hooks/useMediaQuery";
-import me from "assets/me.png";
+import BannerPicture from "assets/me.png";
 import { Socials } from "components/Socials";
 import { TypeAnimation } from "react-type-animation";
 
@@ -10,7 +10,7 @@ export const LandingPage = ({ setSelectedPage }) => {
 		<div id="home" className="h-[1000px] w-11/12 mx-auto pt-[86px]">
 			{isAboveMediumScreens && (
 				<div className="flex flex-col justify-center mx-auto h-full w-11/12">
-					<img src={me} className="mx-auto w-[600px]" alt="me" />
+					<img src={BannerPicture} className="mx-auto w-[600px]" alt="me" />
 					<div className="flex flex-col">
 						<div className="font-openSans leading-tight font-extrabold text-center text-[100px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
@@ -37,7 +37,7 @@ export const LandingPage = ({ setSelectedPage }) => {
 			)}
 			{!isAboveMediumScreens && isAboveSmallScreens && (
 				<div className="flex flex-col justify-center mx-auto h-full w-11/12">
-					<img src={me} className="mx-auto w-[500px]" alt="me" />
+					<img src={BannerPicture} className="mx-auto w-[500px]" alt="me" />
 					<div className="flex flex-col">
 						<div className="font-openSans leading-tight font-extrabold text-center text-[90px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
@@ -64,7 +64,7 @@ export const LandingPage = ({ setSelectedPage }) => {
 			)}
 			{!isAboveSmallScreens && (
 				<div className="flex flex-col justify-center mx-auto h-full w-11/12">
-					<img src={me} className="mx-auto w-[400px]" alt="me" />
+					<img src={BannerPicture} className="mx-auto w-[400px]" alt="me" />
 					<div className="flex flex-col">
 						<div className="font-openSans leading-tight font-extrabold text-center text-[70px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
