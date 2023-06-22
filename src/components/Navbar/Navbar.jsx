@@ -16,8 +16,8 @@ export const Navbar = ({ selectedPage, setSelectedPage }) => {
 	}, [isAboveSmallScreens]);
 
 	return (
-		<nav className="z-40 w-full fixed top-0">
-			<div className="bg-white flex items-center justify-between mx-auto w-11/12 py-4">
+		<nav className="z-40 w-full fixed top-0 bg-white">
+			<div className="flex items-center justify-between mx-auto w-11/12 py-4">
 				<Logo height={50} width={50} className="hover:animate-spin" />
 				{isAboveSmallScreens ? (
 					<div className="flex justify-between gap-6">

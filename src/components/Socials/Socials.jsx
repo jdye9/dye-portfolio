@@ -3,7 +3,7 @@ import { ImMail2 } from "react-icons/im";
 
 export const Socials = ({ size }) => {
 	const largeScreen = (
-		<div className="bg-gradient-to-br from-light-purple to-light-blue rounded-full mx-auto w-[250px] mt-3 p-2">
+		<div className="bg-gradient-to-br from-light-purple to-light-blue rounded-full mx-auto w-[250px] mt-3 p-1">
 			<div className="bg-white rounded-full relative mx-auto flex text-[50px] justify-center p-4 gap-4 h-full w-full">
 				<a
 					className="relative top-[-1px] rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125"
@@ -31,7 +31,7 @@ export const Socials = ({ size }) => {
 	);
 
 	const mediumScreen = (
-		<div className="bg-gradient-to-br from-light-purple to-light-blue rounded-full mx-auto w-[200px] mt-3 p-2">
+		<div className="bg-gradient-to-br from-light-purple to-light-blue rounded-full mx-auto w-[200px] mt-3 p-1">
 			<div className="bg-white rounded-full relative mx-auto flex text-[40px] justify-center p-4 gap-4 h-full w-full">
 				<a
 					className="relative top-[-1px] rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125"

@@ -1,11 +1,12 @@
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { Books, EducationCards } from "./components";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CustomTooltip } from "../CustomTooltip";
+import { useInViewport } from "react-in-viewport";
 
-export const EducationPage = () => {
+export const EducationPage = ({ setSelectedPage }) => {
 	const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-	// const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 	const [selectedBook, setSelectedBook] = useState("");
 	const selectedBookColors = {
 		book1: "#cdc1ee",
@@ -14,26 +15,41 @@ export const EducationPage = () => {
 		book4: "#cad9f7",
 		book5: "#c9e2f8",
 	};
+	const ref = useRef();
+	const { inViewport } = useInViewport(ref, { threshold: 0.7 });
+
+	useEffect(() => {
+		console.log(inViewport);
+		if (inViewport) setSelectedPage("education");
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [inViewport]);
+
 	return (
-		<div id="education" className="flex h-[1000px]">
-			{isAboveMediumScreens && (
+		<div id="education" className="w-full pt-[20px] pb-[100px]" ref={ref}>
+			<div className="w-11/12 mx-auto">
+				<div className="flex justify-center">
+					<div
+						className={`font-openSans leading-tight font-extrabold desktopL:text-[110px] desktopM:text-[90px] mobileL:text-[70px] mobileN:text-[60px] mobileS:text-[50px] mobileXS:text-[40px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue`}
+					>
+						Education
+					</div>
+					<CustomTooltip width={"w-50"} />
+				</div>
+
 				<div
-					className={`flex w-11/12 ${
-						selectedBook ? "justify-around" : "justify-center"
-					} mx-auto my-auto`}
+					className={`flex desktopL:flex-row flex-col desktopL:my-auto mx-auto justify-center pt-10 gap-3`}
 				>
-					<div className="flex">
+					<div className="flex items-center mx-auto desktopL:mx-0 desktopL:my-auto desktopL:h-[400px] desktopL:w-[400px] desktopM:h-[350px] desktopM:w-[350px]">
 						<Books
-							height="450"
-							width="450"
+							height="100%"
+							width="100%"
 							selectedBook={selectedBook}
 							setSelectedBook={setSelectedBook}
 							selectedBookColors={selectedBookColors}
 						/>
-						<CustomTooltip />
 					</div>
 					{selectedBook && (
-						<div className="w-2/5">
+						<div>
 							<EducationCards
 								selectedBook={selectedBook}
 								selectedBookColors={selectedBookColors}
@@ -41,7 +57,7 @@ export const EducationPage = () => {
 						</div>
 					)}
 				</div>
-			)}
+			</div>
 		</div>
 	);
 };

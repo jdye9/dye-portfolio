@@ -39,12 +39,14 @@ module.exports = withMT({
 			logo: "url(./src/images/logo.svg)",
 			me: "url(./src/images/me.png)",
 		},
-	},
-	screens: {
-		xs: "480px",
-		sm: "768px",
-		md: "1060px",
-		tall: { raw: "(min-height: 800px)" },
+		screens: {
+			mobileXS: "0px",
+			mobileS: "320px",
+			mobileN: "360px",
+			mobileL: "540px",
+			desktopM: "768px",
+			desktopL: "1060px",
+		},
 	},
 	plugins: [],
 });

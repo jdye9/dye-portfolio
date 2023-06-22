@@ -16,6 +16,7 @@ export const Books = ({
 	});
 	return (
 		<svg
+			className="mx-auto my-auto"
 			width={height}
 			height={width}
 			viewBox={`0 0 101 99`}

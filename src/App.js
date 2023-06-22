@@ -10,7 +10,7 @@ export const App = () => {
 	const isTallScreen = useMediaQuery("(min-height: 400px)");
 
 	return (
-		<div className="app bg-white">
+		<div className="app">
 			<Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 			{isAboveSmallScreens && isTallScreen && (
 				<ButtonNav
@@ -19,9 +19,10 @@ export const App = () => {
 					setSelectedPage={setSelectedPage}
 				/>
 			)}
-
-			<LandingPage setSelectedPage={selectedPage} />
-			<EducationPage />
+			<div className="flex flex-col pt-[86px]">
+				<LandingPage setSelectedPage={setSelectedPage} />
+				<EducationPage setSelectedPage={setSelectedPage} />
+			</div>
 		</div>
 	);
 };

@@ -1,17 +1,30 @@
 import { useMediaQuery } from "hooks/useMediaQuery";
-import BannerPicture from "assets/me.png";
+import BannerPicture from "../../assets/me.png";
 import { Socials } from "components/Socials";
 import { TypeAnimation } from "react-type-animation";
+import { useEffect, useRef } from "react";
+import { useInViewport } from "react-in-viewport";
 
 export const LandingPage = ({ setSelectedPage }) => {
+	const ref = useRef();
+	const { inViewport } = useInViewport(ref, { threshold: 0.7 });
 	const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+
+	useEffect(() => {
+		console.log(inViewport);
+		if (inViewport) setSelectedPage("home");
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [inViewport]);
+
 	return (
-		<div id="home" className="h-[1000px] w-11/12 mx-auto pt-[86px]">
+		<div id="home" className="w-full pt-[20px] pb-[100px]" ref={ref}>
 			{isAboveMediumScreens && (
-				<div className="flex flex-col justify-center mx-auto h-full w-11/12">
-					<img src={BannerPicture} className="mx-auto w-[600px]" alt="me" />
-					<div className="flex flex-col">
+				<div className="flex flex-col justify-center mx-auto w-11/12">
+					<div className="h-[509px] w-[600px] mx-auto">
+						<img src={BannerPicture} className="mx-auto" alt="me" />
+					</div>
+					<div className="flex flex-col justify-center">
 						<div className="font-openSans leading-tight font-extrabold text-center text-[100px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
 						</div>
@@ -36,9 +49,9 @@ export const LandingPage = ({ setSelectedPage }) => {
 				</div>
 			)}
 			{!isAboveMediumScreens && isAboveSmallScreens && (
-				<div className="flex flex-col justify-center mx-auto h-full w-11/12">
+				<div className="flex flex-col justify-center mx-auto w-11/12">
 					<img src={BannerPicture} className="mx-auto w-[500px]" alt="me" />
-					<div className="flex flex-col">
+					<div className="flex flex-col justify-center">
 						<div className="font-openSans leading-tight font-extrabold text-center text-[90px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
 						</div>
@@ -63,13 +76,13 @@ export const LandingPage = ({ setSelectedPage }) => {
 				</div>
 			)}
 			{!isAboveSmallScreens && (
-				<div className="flex flex-col justify-center mx-auto h-full w-11/12">
+				<div className="flex flex-col justify-center mx-auto w-11/12">
 					<img src={BannerPicture} className="mx-auto w-[400px]" alt="me" />
-					<div className="flex flex-col">
-						<div className="font-openSans leading-tight font-extrabold text-center text-[70px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
+					<div className="flex flex-col justify-center">
+						<div className="font-openSans leading-tight font-extrabold text-center mobileL:text-[70px] mobileN:text-[60px] mobileS:text-[50px] mobileXS:text-[40px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
 						</div>
-						<div className="font-openSans leading-tight font-extrabold text-center text-[35px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
+						<div className="font-openSans leading-tight font-extrabold text-center mobileL:text-[35px] mobileN:text-[30px] mobileS:text-[25px] mobileXS:text-[20px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							<TypeAnimation
 								sequence={[
 									"UI Engineer",

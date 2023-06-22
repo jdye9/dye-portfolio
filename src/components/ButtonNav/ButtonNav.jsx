@@ -28,6 +28,7 @@ export const ButtonNav = ({ navLinks, selectedPage, setSelectedPage }) => {
 				<AnchorLink
 					href={`#${page.id}`}
 					onClick={() => setSelectedPage(page.id)}
+					offset="86"
 				>
 					{selectedPage === page.id
 						? selectedPageIcon(index)
