@@ -1,11 +1,7 @@
 export const pageText = {
 	book1: {
 		title: "General Information",
-		information: [
-			"Santa Clara University",
-			"BS of Commerce in MIS",
-			"GPA: 3.947",
-		],
+		information: ["Santa Clara University", "BS - MIS", "GPA: 3.947"],
 	},
 	book2: {
 		title: "Awards & Scholarships",

@@ -12,7 +12,6 @@ export const LandingPage = ({ setSelectedPage }) => {
 	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
 	useEffect(() => {
-		console.log(inViewport);
 		if (inViewport) setSelectedPage("home");
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [inViewport]);
@@ -79,10 +78,10 @@ export const LandingPage = ({ setSelectedPage }) => {
 				<div className="flex flex-col justify-center mx-auto w-11/12">
 					<img src={BannerPicture} className="mx-auto w-[400px]" alt="me" />
 					<div className="flex flex-col justify-center">
-						<div className="font-openSans leading-tight font-extrabold text-center mobileL:text-[70px] mobileN:text-[60px] mobileS:text-[50px] mobileXS:text-[40px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
+						<div className="font-openSans leading-tight font-extrabold text-center mobileL:text-[70px] mobileN:text-[60px] mobileS:text-[50px] text-[40px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							Jared Dye
 						</div>
-						<div className="font-openSans leading-tight font-extrabold text-center mobileL:text-[35px] mobileN:text-[30px] mobileS:text-[25px] mobileXS:text-[20px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
+						<div className="font-openSans leading-tight font-extrabold text-center mobileL:text-[35px] mobileN:text-[30px] mobileS:text-[25px] text-[20px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
 							<TypeAnimation
 								sequence={[
 									"UI Engineer",

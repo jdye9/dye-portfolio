@@ -40,7 +40,6 @@ module.exports = withMT({
 			me: "url(./src/images/me.png)",
 		},
 		screens: {
-			mobileXS: "0px",
 			mobileS: "320px",
 			mobileN: "360px",
 			mobileL: "540px",

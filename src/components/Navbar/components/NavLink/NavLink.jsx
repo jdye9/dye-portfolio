@@ -38,7 +38,7 @@ export const NavLink = ({
 				setIsMenuToggled(false);
 			}}
 			className={
-				"group font-openSans mobileL:text-[55px] mobileN:text-[50px] mobileS:text-[45px] mobileXS:text-[40px] font-bold text-transparent bg-clip-text inline-block transition-all duration-500 ease-in-out bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 hover:scale-125"
+				"group font-openSans mobileL:text-[55px] mobileN:text-[50px] mobileS:text-[45px] text-[40px] font-bold text-transparent bg-clip-text inline-block transition-all duration-500 ease-in-out bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 hover:scale-125"
 			}
 			offset="86"
 		>
