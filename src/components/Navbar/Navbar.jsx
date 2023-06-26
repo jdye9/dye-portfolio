@@ -32,7 +32,7 @@ export const Navbar = ({ selectedPage, setSelectedPage }) => {
 						))}
 					</div>
 				) : (
-					<button className="rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125">
+					<button className="rounded-full text-white transition duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125">
 						<FaListAlt
 							size={45}
 							viewBox="40 40 430 430"
