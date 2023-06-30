@@ -1,7 +1,10 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
 
 module.exports = withMT({
-	content: ["./src/**/*.{html,js,jsx}"],
+	content: [
+		"./src/**/*.{html,js,jsx}",
+		"node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+	],
 	safelist: [
 		"bg-[#cdc1ee]",
 		"bg-[#ccc9f1]",
@@ -35,17 +38,15 @@ module.exports = withMT({
 		fontFamily: {
 			openSans: ["Open Sans", "sans-serif"],
 		},
-		content: {
-			logo: "url(./src/images/logo.svg)",
-			me: "url(./src/images/me.png)",
-		},
 		screens: {
 			mobileS: "320px",
 			mobileN: "360px",
 			mobileL: "540px",
 			desktopM: "768px",
-			desktopL: "1060px",
+			desktopL: "1080px",
+			desktopXL: "1440px",
+			desktopTall: { raw: "(min-height: 1080px)" },
 		},
 	},
-	plugins: [],
+	plugins: [require("flowbite/plugin")],
 });

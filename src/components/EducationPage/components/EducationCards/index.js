@@ -1,1 +1,0 @@
-export { EducationCards } from "./EducationCards";
