@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { EducationPage, Navbar, LandingPage } from "./components";
+import {
+	Navbar,
+	LandingPage,
+	LineGradient,
+	ExperiencePage,
+} from "./components";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { ButtonNav } from "components";
 import { navLinks } from "./constants";
@@ -21,7 +26,21 @@ export const App = () => {
 			)}
 			<div className="flex flex-col pt-[86px]">
 				<LandingPage setSelectedPage={setSelectedPage} />
-				<EducationPage setSelectedPage={setSelectedPage} />
+				<div className="mx-auto w-11/12">
+					<LineGradient
+						h={"h-1"}
+						w={"w-full"}
+						color={"bg-gradient-to-br from-light-purple to-light-blue"}
+					/>
+				</div>
+				<ExperiencePage setSelectedPage={setSelectedPage} />
+				<div className="mx-auto w-11/12">
+					<LineGradient
+						h={"h-1"}
+						w={"w-full"}
+						color={"bg-gradient-to-br from-light-purple to-light-blue"}
+					/>
+				</div>
 			</div>
 		</div>
 	);

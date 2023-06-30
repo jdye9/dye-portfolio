@@ -23,7 +23,7 @@ export const ButtonNav = ({ navLinks, selectedPage, setSelectedPage }) => {
 		></div>
 	);
 	return (
-		<div className="fixed flex flex-col right-7 top-[45%] gap-6">
+		<div className="fixed flex flex-col right-7 top-[45%] gap-6 z-10">
 			{navLinks.map((page, index) => (
 				<AnchorLink
 					href={`#${page.id}`}
