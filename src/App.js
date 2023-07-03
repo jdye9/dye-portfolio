@@ -4,6 +4,8 @@ import {
 	LandingPage,
 	LineGradient,
 	ExperiencePage,
+	SkillsPage,
+	Reveal,
 } from "./components";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { ButtonNav } from "components";
@@ -27,13 +29,25 @@ export const App = () => {
 			<div className="flex flex-col pt-[86px]">
 				<LandingPage setSelectedPage={setSelectedPage} />
 				<div className="mx-auto w-11/12">
-					<LineGradient
-						h={"h-1"}
-						w={"w-full"}
-						color={"bg-gradient-to-br from-light-purple to-light-blue"}
-					/>
+					<Reveal>
+						<LineGradient
+							h={"h-1"}
+							w={"w-full"}
+							color={"bg-gradient-to-br from-light-purple to-light-blue"}
+						/>
+					</Reveal>
 				</div>
 				<ExperiencePage setSelectedPage={setSelectedPage} />
+				<div className="mx-auto w-11/12">
+					<Reveal>
+						<LineGradient
+							h={"h-1"}
+							w={"w-full"}
+							color={"bg-gradient-to-br from-light-purple to-light-blue"}
+						/>
+					</Reveal>
+				</div>
+				<SkillsPage setSelectedPage={setSelectedPage} />
 				<div className="mx-auto w-11/12">
 					<LineGradient
 						h={"h-1"}

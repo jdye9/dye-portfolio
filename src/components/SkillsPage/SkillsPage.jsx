@@ -1,22 +1,20 @@
+import { Reveal } from "components/Reveal";
 import { useEffect, useRef } from "react";
 import { useInViewport } from "react-in-viewport";
-import { ExperienceTimeline } from "./components/Timeline";
-import { Reveal } from "components/Reveal";
-import { ResumeButton } from "./components/ResumeButton";
 
-export const ExperiencePage = ({ setSelectedPage }) => {
+export const SkillsPage = ({ setSelectedPage }) => {
 	const ref = useRef();
 	const { inViewport } = useInViewport(ref, { threshold: 0.7 });
 
 	useEffect(() => {
-		if (inViewport) setSelectedPage("experience");
+		if (inViewport) setSelectedPage("skills");
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [inViewport]);
 
 	return (
 		<div
-			id="experience"
-			className={`relative flex flex-col justify-center w-full h-[calc(100vh-86px)] desktopL:min-h-[750px] desktopM:min-h-[700px] desktopS:min-h-[575px] mobileL:min-h-[700px] mobileM:min-h-[700px] mobileS:min-h-[750px] min-h-[850px]`}
+			id="skills"
+			className={`relative flex flex-col justify-center w-full h-[calc(100vh-86px)]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">
@@ -25,16 +23,10 @@ export const ExperiencePage = ({ setSelectedPage }) => {
 						<div
 							className={`font-openSans leading-tight font-extrabold desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue`}
 						>
-							Experience
+							Skills
 						</div>
 					</Reveal>
 				</div>
-			</div>
-			<div className="flex w-2/3 mx-auto">
-				<ExperienceTimeline />
-			</div>
-			<div className="flex w-2/3 mx-auto">
-				<ResumeButton />
 			</div>
 		</div>
 	);

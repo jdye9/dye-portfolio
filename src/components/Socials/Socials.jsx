@@ -1,32 +1,30 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { ImMail2 } from "react-icons/im";
+import { Button, IconButton } from "@material-tailwind/react";
 
 export const Socials = () => {
 	return (
-		<div className="bg-gradient-to-br from-light-purple to-light-blue rounded-full mx-auto desktopL:w-[215px] desktopM:w-[200px] mobileL:w-[175px] w-[150px] mt-2 p-1">
-			<div className="bg-white rounded-full mx-auto flex desktopL:text-[45px] desktopM:text-[40px] mobileL:text-[35px] text-[30px] gap-4 justify-center p-2 h-full w-full">
-				<a
-					className="relative top-[-1px] rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125"
-					id="github"
-					href="https://github.com/jdye9"
-				>
-					<FaGithub viewBox="30 88 435 400" />
-				</a>
-				<a
-					className="relative rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125"
-					id="linkedin"
-					href="https://www.linkedin.com/in/jareddye379/"
-				>
-					<FaLinkedin viewBox="0 57 448 400" />
-				</a>
-				<a
-					className="relative top-[1px] rounded-full text-white transition-all duration-500 bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 ease-in-out hover:scale-125"
-					id="email"
-					href="contact"
-				>
-					<ImMail2 />
-				</a>
-			</div>
+		<div className="w-full flex mx-auto gap-4 mt-4">
+			<IconButton
+				size="lg"
+				className="bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 active:shadow-lg shadow-md hover:shadow-gray-200"
+				onClick={(e) => e.currentTarget.blur()}
+			>
+				<i className="fab fa-linkedin-in text-3xl" />
+			</IconButton>
+			<IconButton
+				size="lg"
+				className="bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 active:shadow-lg shadow-md hover:shadow-gray-200"
+				onClick={(e) => e.currentTarget.blur()}
+			>
+				<i className="fab fa-github text-3xl" />
+			</IconButton>
+			<Button
+				size="lg"
+				className="flex items-center gap-3 bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 active:shadow-lg shadow-md hover:shadow-gray-200 font-openSans"
+				onClick={(e) => e.currentTarget.blur()}
+			>
+				<i className={"fas fa-paper-plane"} />
+				Contact Me
+			</Button>
 		</div>
 	);
 };

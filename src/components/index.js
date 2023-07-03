@@ -5,3 +5,5 @@ export { LandingPage } from "./LandingPage";
 export { Socials } from "./Socials";
 export { CustomTooltip } from "./CustomTooltip";
 export { ExperiencePage } from "./ExperiencePage";
+export { SkillsPage } from "./SkillsPage";
+export { Reveal } from "./Reveal";
