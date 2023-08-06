@@ -9,10 +9,14 @@ export const MobileMenu = ({
 	setIsMenuToggled,
 	selectedPage,
 }: MobileMenuProps) => (
-	<div className="fixed top-0 right-0 w-full h-full overflow-auto bg-white">
+	<div className="fixed top-0 right-0 flex w-full h-full overflow-auto bg-white desktopS:hidden">
 		<div className="fixed top-0 z-40 w-full bg-white">
 			<div className="top-0 flex items-center justify-between w-11/12 py-4 mx-auto">
-				<img src={Logo} alt="logo" className="hover:animate-spin" />
+				<img
+					src={Logo}
+					alt="logo"
+					className="hover:animate-spin h-[50px] w-[50px]"
+				/>
 				<button className="text-white transition duration-500 ease-in-out rounded-full bg-gradient-to-br from-light-purple via-light-blue to-light-purple bg-size-200 bg-pos-0 hover:bg-pos-100 hover:scale-125">
 					<IoCloseCircle
 						size={47}
@@ -29,7 +33,7 @@ export const MobileMenu = ({
 				/>
 			</div>
 		</div>
-		<div className="flex flex-col w-full mx-auto text-center gap-8 pt-[125px]">
+		<div className="flex flex-col w-3/4 mx-auto text-center gap-8 pt-[125px]">
 			{pages.map((page, index) => (
 				<NavLink
 					key={`${page}-${index}`}

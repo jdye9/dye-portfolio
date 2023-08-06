@@ -1,5 +1,5 @@
 export type CardProps = {
-	img: string;
+	media: string;
 	title: string;
 	description: string;
 	styling: string;

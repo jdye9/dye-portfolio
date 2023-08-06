@@ -5,7 +5,7 @@ export const LineDisplay = ({
 	offset,
 	width,
 	title,
-	lines,
+	perLine,
 	lineContent,
 	xDirection,
 }: LineDisplayProps) => {
@@ -16,36 +16,39 @@ export const LineDisplay = ({
 					{title}
 				</div>
 			</Reveal>
-			{[...new Array(lines).keys()].map((line) => {
-				const arrayToSlice = [...lineContent];
-				const beginningIndex = line * (lineContent.length / lines);
-				const logos = arrayToSlice.slice(
-					//formula for odd number with more loaded towards beginning of rows
-					Math.floor(beginningIndex), //Math.ceil(beginningIndex)
-					Math.floor(beginningIndex + lineContent.length / lines) //Math.ceil(beginningIndex) + Math.ceil(lineContent.length / lines)
-				);
-				return (
-					<Reveal axis={"x"} key={line} xDirection={xDirection}>
-						<div
-							className={`${
-								offset === "left"
-									? line % 2 === 0
-										? "mr-auto"
-										: "ml-auto"
-									: line % 2 === 0
-									? "ml-auto"
-									: "mr-auto"
-							} flex justify-around w-5/6 rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue`}
-						>
-							{logos.map((logo) => (
-								<Reveal axis={"x"} key={logo} xDirection={xDirection}>
-									<IconItem img={logo} />
-								</Reveal>
-							))}
-						</div>
-					</Reveal>
-				);
-			})}
+			{lineContent
+				.map((_, index) => {
+					if (index % perLine === 0) return index;
+					return undefined;
+				})
+				.filter((index) => index !== undefined)
+				.map((itemIndex, index) => {
+					if (itemIndex !== undefined && itemIndex >= 0) {
+						const items = lineContent.slice(itemIndex, itemIndex + perLine);
+						return (
+							<Reveal axis={"x"} key={index} xDirection={xDirection}>
+								<div
+									className={`${
+										offset === "left"
+											? index % 2 === 0
+												? "mr-auto"
+												: "ml-auto"
+											: index % 2 === 0
+											? "ml-auto"
+											: "mr-auto"
+									} flex justify-around w-5/6 rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue`}
+								>
+									{items.map((item) => (
+										<Reveal axis={"x"} key={item} xDirection={xDirection}>
+											<IconItem img={item} />
+										</Reveal>
+									))}
+								</div>
+							</Reveal>
+						);
+					}
+					return <></>;
+				})}
 		</div>
 	);
 };

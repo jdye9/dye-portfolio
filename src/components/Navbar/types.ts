@@ -1,6 +1,6 @@
-import { Page, Pages } from "../../types";
+import { Page } from "../../types";
 
 export type NavbarProps = {
 	selectedPage: Page;
-	setSelectedPage: React.Dispatch<React.SetStateAction<Page>>;
+	pages: Page[];
 };

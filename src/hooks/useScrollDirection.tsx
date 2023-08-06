@@ -1,4 +1,4 @@
-const { useEffect, useState } = require("react");
+import { useEffect, useState } from "react";
 
 export const useScrollDirection = () => {
 	const [scrollDir, setScrollDir] = useState("down");

@@ -1,4 +1,4 @@
-export type TimeLineItem = {
+export type TimelineItem = {
 	title: string;
 	icon: string;
 	iconSize: string;
@@ -7,5 +7,5 @@ export type TimeLineItem = {
 };
 
 export type TimelineProps = {
-	timeLineItems: TimeLineItem[];
+	timelineItems: TimelineItem[];
 };

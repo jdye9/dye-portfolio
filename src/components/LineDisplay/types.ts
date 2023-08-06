@@ -5,7 +5,7 @@ export type LineDisplayProps = {
 	offset: Offset;
 	width: string;
 	title: string;
-	lines: number;
+	perLine: number;
 	lineContent: string[];
 	xDirection?: XDirection;
 };

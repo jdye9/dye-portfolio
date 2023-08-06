@@ -2,11 +2,12 @@ import { Reveal, Card } from "../../components";
 import { useEffect, useRef } from "react";
 import { useInViewport } from "../../hooks/useInViewport";
 import { PageProps } from "../types";
-import { projects } from "./constants";
+import { useGetProjects } from "../../hooks/useMongoDB";
 
 export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	const ref = useRef(null);
 	const inViewport = useInViewport(ref, 50);
+	const { data: projects } = useGetProjects();
 
 	useEffect(() => {
 		if (inViewport) setSelectedPage("PROJECTS");
@@ -16,7 +17,7 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="PROJECTS"
-			className={`relative flex flex-col justify-center w-full desktopL:min-h-[830px]`}
+			className={`relative flex flex-col justify-center w-full h-[calc(100vh-73px)] min-h-[350px] mobileS:min-h-[400px] mobileM:min-h-[500px] mobileL:min-h-[600px] desktopS:min-h-[700px] desktopM:min-h-[830px] desktopL:min-h-[900px] desktopXL:min-h-[1100px] desktopXXL:min-h-[1175px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">
@@ -30,16 +31,21 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 				<div className="flex flex-wrap justify-center w-full gap-12">
-					{projects.map((project) => (
-						<Reveal axis={"y"}>
-							<Card
-								img={project.img}
-								title={project.title}
-								description={project.description}
-								styling={"desktopL:w-[700px] desktopL:h-[500px] mx-auto"}
-							/>
-						</Reveal>
-					))}
+					{projects &&
+						projects.map((project) => (
+							<Reveal key={project._id} axis={"y"}>
+								<a href={project.url} rel="noreferrer" target="_blank">
+									<Card
+										media={project.media.ref}
+										title={project.title}
+										description={project.description}
+										styling={
+											"w-[200px] h-[225px] mobileS:w-[250px] mobileS:h-[275px] mobileM:w-[260px] mobileM:h-[300px] mobileL:w-[400px] mobileL:h-[350px] desktopS:w-[600px] desktopS:h-[450px] desktopM:w-[800px] desktopM:h-[575px] desktopL:w-[1000px] desktopL:h-[675px] desktopXL:w-[1100px] desktopXL:h-[750px] desktopXXL:w-[1300px] desktopXXL:h-[875px] mx-auto"
+										}
+									/>
+								</a>
+							</Reveal>
+						))}
 				</div>
 			</div>
 		</div>

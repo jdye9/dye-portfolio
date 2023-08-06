@@ -29,7 +29,7 @@ export const IconItem = ({ img }: IconItemProps) => {
 			{loader && (
 				<img src={Logo} alt="logo" className="animate-spin h-[25px] w-[25px]" />
 			)}
-			{!loader && <img src={downloadUrl} alt="logo" className="w-2/3" />}
+			{!loader && <img src={downloadUrl} alt="item" className="w-2/3" />}
 		</div>
 	);
 };

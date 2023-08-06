@@ -37,7 +37,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="SKILLS"
-			className={`relative flex flex-col justify-center w-full min-h-[900px] mobileS:min-h-[930px] mobileM:min-h-[995px] mobileL:min-h-[1050px] desktopS:min-h-[1220px] desktopM:min-h-[1390px] desktopL:min-h-[1550px] desktopXL:min-h-[1850px] desktopXXL:min-h-[2200px]`}
+			className={`relative flex flex-col justify-center w-full h-[calc(100vh-73px)] min-h-[1000px] mobileS:min-h-[1030px] mobileM:min-h-[1095px] mobileL:min-h-[1150px] desktopS:min-h-[1320px] desktopM:min-h-[1490px] desktopL:min-h-[1750px] desktopXL:min-h-[2000px] desktopXXL:min-h-[2400px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">
@@ -56,7 +56,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 						xDirection="left"
 						width={"w-3/4"}
 						title={"Languages"}
-						lines={4}
+						perLine={3}
 						lineContent={languages}
 					/>
 					<LineDisplay
@@ -64,7 +64,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 						xDirection="right"
 						width={"w-3/4"}
 						title={"Frameworks"}
-						lines={2}
+						perLine={3}
 						lineContent={frameworks}
 					/>
 					<LineDisplay
@@ -72,7 +72,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 						xDirection="left"
 						width={"w-3/4"}
 						title={"Libraries"}
-						lines={2}
+						perLine={3}
 						lineContent={libraries}
 					/>
 				</div>

@@ -8,7 +8,7 @@ html,
 body,
 #root,
 .app {
-	width: 100vw;
+	width: 100%;
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;

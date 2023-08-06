@@ -8,7 +8,6 @@ export const Reveal = ({ children, axis, xDirection }: RevealProps) => {
 	const isInView = useInView(ref);
 	const animateContent = useAnimation();
 	const scrollDirection = useScrollDirection();
-
 	useEffect(() => {
 		if (isInView) {
 			animateContent.start("visible");

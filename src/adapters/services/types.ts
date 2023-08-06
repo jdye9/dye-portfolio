@@ -8,3 +8,28 @@ export type GetSkillsResponse = {
 		ref: string;
 	};
 }[];
+
+export type GetExperiencesResponse = {
+	_id: string;
+	experience: string;
+	description: string[];
+	startDate: Date;
+	endDate: Date;
+	img: {
+		_id: string;
+		fileName: string;
+		ref: string;
+	};
+}[];
+
+export type GetProjectsResponse = {
+	_id: string;
+	title: string;
+	description: string;
+	media: {
+		_id: string;
+		fileName: string;
+		ref: string;
+	};
+	url: string;
+}[];

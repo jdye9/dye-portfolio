@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useInViewport } from "../../hooks/useInViewport";
 import { PageProps } from "../types";
 
-export const LandingPage = ({ setSelectedPage }: PageProps) => {
+export const LandingPage = ({ setSelectedPage, isMenuToggled }: PageProps) => {
 	const ref = useRef(null);
 	const inViewport = useInViewport(ref, 50);
 
@@ -15,7 +15,7 @@ export const LandingPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="HOME"
-			className="flex flex-col justify-center w-full h-[calc(100vh-86px)] desktopXXL:min-h-[600px] desktopXL:min-h-[495px] desktopM:min-h-[400px] mobileL:min-h-[340px] mobileM:min-h-[475px] min-h-[425px]"
+			className={`flex flex-col justify-center w-full h-[calc(100vh-73px)] desktopXXL:min-h-[600px] desktopXL:min-h-[495px] desktopM:min-h-[400px] mobileL:min-h-[340px] mobileM:min-h-[475px] min-h-[425px]`}
 			ref={ref}
 		>
 			<div className="flex flex-col justify-center w-2/3 mx-auto">
