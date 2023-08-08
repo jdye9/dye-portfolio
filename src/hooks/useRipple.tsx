@@ -8,7 +8,10 @@ type RippleStyle = {
 	width: number;
 };
 
-export const useRipple = (ref: React.RefObject<HTMLButtonElement>) => {
+export const useRipple = (
+	ref: React.RefObject<HTMLButtonElement>,
+	color: string
+) => {
 	//ripples are just styles that we attach to span elements
 	const [ripples, setRipples] = useState<RippleStyle[]>([]);
 
@@ -60,7 +63,7 @@ export const useRipple = (ref: React.RefObject<HTMLButtonElement>) => {
 	return ripples?.map((style, i) => {
 		return (
 			<span
-				className="absolute scale-0 bg-white rounded-full opacity-0 animate-ripple"
+				className={`absolute scale-0 rounded-full opacity-0 ${color} animate-ripple`}
 				key={i}
 				style={{
 					height: style.height,

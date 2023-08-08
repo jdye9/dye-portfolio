@@ -9,5 +9,5 @@ export { LineDisplay } from "./LineDisplay";
 export { IconItem } from "./IconItem";
 export { Card } from "./Card";
 export { Timeline } from "./Timeline";
-export { NavLink } from "./NavLink";
-export { MobileMenu } from "./MobileMenu";
+export { Footer } from "./Footer";
+export { ContactCard } from "./ContactCard";

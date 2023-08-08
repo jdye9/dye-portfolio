@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Reveal } from "../../Reveal";
 import { TimelineItemProps } from "./types";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import Logo from "../../../assets/logo.svg";
+import Logo from "../../../assets/white-logo.svg";
 
 export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 	const storage = getStorage();

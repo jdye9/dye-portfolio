@@ -6,17 +6,17 @@ export const CustomTextIconButton = ({
 	icon,
 	text,
 	textStyling,
-	height,
-	width,
+	styling,
 	handleClick,
+	rippleColor,
 }: CustomTextIconButtonProps) => {
 	const ref = useRef(null);
-	const ripples = useRipple(ref);
+	const ripples = useRipple(ref, rippleColor);
 
 	return (
 		<button
 			ref={ref}
-			className={`justify-around items-center relative flex ${width} ${height} overflow-hidden text-white rounded-lg shadow-md hover:cursor-pointer bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200`}
+			className={`justify-center gap-2 items-center relative flex ${styling} overflow-hidden rounded-lg shadow-md hover:cursor-pointer`}
 			onClick={handleClick}
 		>
 			{ripples}

@@ -17,29 +17,29 @@ export const Reveal = ({ children, axis, xDirection }: RevealProps) => {
 	}, [animateContent, isInView]);
 
 	return (
-		<div ref={ref}>
-			<motion.div
-				variants={{
-					hidden:
-						scrollDirection === "down"
-							? axis === "x"
-								? xDirection === "right"
-									? { opacity: 0, x: -75 }
-									: { opacity: 0, x: 75 }
-								: { opacity: 0, y: -75 }
-							: axis === "x"
+		<motion.div
+			variants={{
+				hidden:
+					scrollDirection === "down"
+						? axis === "x"
 							? xDirection === "right"
-								? { opacity: 0, x: 75 }
-								: { opacity: 0, x: -75 }
-							: { opacity: 0, y: 75 },
-					visible: axis === "x" ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 },
-				}}
-				initial="hidden"
-				animate={animateContent}
-				transition={{ duration: 0.75, delay: 0.25 }}
-			>
-				{children}
-			</motion.div>
-		</div>
+								? { opacity: 0, x: -75 }
+								: { opacity: 0, x: 75 }
+							: { opacity: 0, y: -75 }
+						: axis === "x"
+						? xDirection === "right"
+							? { opacity: 0, x: 75 }
+							: { opacity: 0, x: -75 }
+						: { opacity: 0, y: 75 },
+				visible: axis === "x" ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 },
+			}}
+			initial="hidden"
+			animate={animateContent}
+			transition={{ duration: 0.75, delay: 0.25 }}
+			ref={ref}
+			className="w-full"
+		>
+			{children}
+		</motion.div>
 	);
 };

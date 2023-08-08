@@ -1,7 +1,7 @@
 import { getDownloadURL, ref, getStorage } from "firebase/storage";
 import { IconItemProps } from "./types";
 import { useEffect, useState } from "react";
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/white-logo.svg";
 
 export const IconItem = ({ img }: IconItemProps) => {
 	const storage = getStorage();

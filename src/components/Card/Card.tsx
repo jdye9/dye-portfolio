@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CardProps } from "./types";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/white-logo.svg";
 
 export const Card = ({ media, title, description, styling }: CardProps) => {
 	const storage = getStorage();

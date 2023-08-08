@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { Navbar, LineGradient, Reveal } from "./components";
-import { ButtonNav } from "./components";
+import { ButtonNav, Footer } from "./components";
 import { pages } from "./constants";
 import { Page } from "./types";
-import { ExperiencePage, LandingPage, ProjectsPage, SkillsPage } from "./pages";
+import {
+	ContactPage,
+	ExperiencePage,
+	LandingPage,
+	ProjectsPage,
+	SkillsPage,
+} from "./pages";
 
 export const App = () => {
 	const [selectedPage, setSelectedPage] = useState<Page>("HOME");
-	const [isMenuToggled, setIsMenuToggled] = useState(false);
 
 	return (
 		<div className="app">
 			<Navbar pages={pages} selectedPage={selectedPage} />
 			<ButtonNav pages={pages} selectedPage={selectedPage} />
-			<div className="flex w-full flex-col pt-[73px]">
-				<LandingPage
-					setSelectedPage={setSelectedPage}
-					isMenuToggled={isMenuToggled}
-				/>
+			<div className="flex w-full flex-col pt-[80px]">
+				<LandingPage setSelectedPage={setSelectedPage} />
 				<div className={`w-11/12 mx-auto`}>
 					<Reveal axis={"y"}>
 						<LineGradient
@@ -27,10 +29,7 @@ export const App = () => {
 						/>
 					</Reveal>
 				</div>
-				<ExperiencePage
-					setSelectedPage={setSelectedPage}
-					isMenuToggled={isMenuToggled}
-				/>
+				<ExperiencePage setSelectedPage={setSelectedPage} />
 				<div className={`w-11/12 mx-auto`}>
 					<Reveal axis={"y"}>
 						<LineGradient
@@ -40,10 +39,7 @@ export const App = () => {
 						/>
 					</Reveal>
 				</div>
-				<SkillsPage
-					setSelectedPage={setSelectedPage}
-					isMenuToggled={isMenuToggled}
-				/>
+				<SkillsPage setSelectedPage={setSelectedPage} />
 				<div className={`w-11/12 mx-auto`}>
 					<Reveal axis={"y"}>
 						<LineGradient
@@ -53,11 +49,8 @@ export const App = () => {
 						/>
 					</Reveal>
 				</div>
-				<ProjectsPage
-					setSelectedPage={setSelectedPage}
-					isMenuToggled={isMenuToggled}
-				/>
-				{/* <div className="w-11/12 mx-auto">
+				<ProjectsPage setSelectedPage={setSelectedPage} />
+				<div className="w-11/12 mx-auto">
 					<Reveal axis={"y"}>
 						<LineGradient
 							h={"h-1"}
@@ -65,7 +58,9 @@ export const App = () => {
 							color={"bg-gradient-to-br from-light-purple to-light-blue"}
 						/>
 					</Reveal>
-				</div> */}
+				</div>
+				<ContactPage setSelectedPage={setSelectedPage} />
+				<Footer />
 			</div>
 		</div>
 	);

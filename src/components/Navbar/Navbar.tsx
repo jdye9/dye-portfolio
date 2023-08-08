@@ -1,5 +1,5 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/white-logo.svg";
 import { useState } from "react";
 import { NavbarProps } from "./types";
 import { LineGradient } from "../LineGradient";
@@ -11,7 +11,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 		<nav className="fixed top-0 left-0 z-20 w-full shadow bg-gradient-to-br from-light-purple to-light-blue">
 			<div className="flex flex-wrap p-4">
 				<div className="flex justify-between w-full">
-					<img src={Logo} className="h-10 mr-3 hover:animate-spin" alt="Logo" />
+					<img src={Logo} className="h-12 mr-3 hover:animate-spin" alt="Logo" />
 					<div className="flex desktopS:hidden">
 						<button
 							type="button"
@@ -27,9 +27,9 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 							>
 								<path
 									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
 									d="M1 1h15M1 7h15M1 13h15"
 								/>
 							</svg>
@@ -39,8 +39,9 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 						{pages.map((page) => (
 							<AnchorLink
 								href={`#${page}`}
-								offset="72"
+								offset="80"
 								className="duration-500 ease-out hover:scale-110"
+								key={page}
 							>
 								{page}
 								{selectedPage === page && (
@@ -61,7 +62,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 							{pages.map((page) => (
 								<AnchorLink
 									href={`#${page}`}
-									offset="72"
+									offset="80"
 									onClick={() => setMobileMenu(false)}
 									className={`rounded ${
 										selectedPage !== page ? "hover:bg-gray-100" : ""

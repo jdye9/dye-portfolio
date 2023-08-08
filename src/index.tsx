@@ -2,14 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { App } from "./App";
-// Import the functions you need from the SDKs you need
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { initializeApp } from "firebase/app";
 import { QueryClient, QueryClientProvider } from "react-query";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
 	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -29,6 +26,7 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
 	<React.StrictMode>
 		<QueryClientProvider client={new QueryClient()}>
+			<ToastContainer />
 			<App />
 		</QueryClientProvider>
 	</React.StrictMode>

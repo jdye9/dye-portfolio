@@ -4,17 +4,17 @@ import { CustomIconButtonProps } from "./types";
 
 export const CustomIconButton = ({
 	icon,
-	height,
-	width,
 	link,
+	rippleColor,
+	styling,
 }: CustomIconButtonProps) => {
 	const ref = useRef(null);
-	const ripples = useRipple(ref);
+	const ripples = useRipple(ref, rippleColor);
 
 	return (
 		<a
 			ref={ref}
-			className={`relative flex ${height} ${width} overflow-hidden text-white rounded-lg shadow-md hover:cursor-pointer bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200 justify-center items-center`}
+			className={`relative flex ${styling} overflow-hidden rounded-lg shadow-md justify-center items-center`}
 			href={link}
 			rel="noreferrer"
 			target="_blank"

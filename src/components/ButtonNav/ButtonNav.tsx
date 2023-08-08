@@ -26,7 +26,7 @@ export const ButtonNav = ({ pages, selectedPage }: ButtonNavProps) => {
 	return (
 		<div className="fixed flex flex-col right-7 top-[40%] gap-6 z-10 short:hidden desktopSUnder:hidden">
 			{pages.map((page, index) => (
-				<AnchorLink key={page} href={`#${page}`} offset="86">
+				<AnchorLink key={page} href={`#${page}`} offset="80">
 					{selectedPage === page
 						? selectedPageIcon(index)
 						: notSelectedPageIcon(index)}

@@ -8,10 +8,7 @@ import { useGetExperiences } from "../../hooks/useMongoDB";
 import { Experience } from "./types";
 import { TimelineItem } from "../../components/Timeline/types";
 
-export const ExperiencePage = ({
-	setSelectedPage,
-	isMenuToggled,
-}: PageProps) => {
+export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 	const ref = useRef(null);
 	const inViewport = useInViewport(ref, 50);
 	const storage = getStorage();
@@ -72,7 +69,7 @@ export const ExperiencePage = ({
 	return (
 		<div
 			id="EXPERIENCE"
-			className={`relative flex flex-col justify-center w-full h-[calc(100vh-73px)] desktopXXL:min-h-[850px] desktopXL:min-h-[775px] desktopL:min-h-[825px] desktopM:min-h-[745px] desktopS:min-h-[635px] mobileL:min-h-[700px] mobileM:min-h-[740px] mobileS:min-h-[800px] min-h-[900px]`}
+			className={`relative flex flex-col justify-center w-full h-[calc(100vh-80px)] desktopXXL:min-h-[850px] desktopXL:min-h-[775px] desktopL:min-h-[825px] desktopM:min-h-[745px] desktopS:min-h-[635px] mobileL:min-h-[700px] mobileM:min-h-[740px] mobileS:min-h-[800px] min-h-[900px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">
@@ -89,18 +86,16 @@ export const ExperiencePage = ({
 			<div className="flex w-2/3 mx-auto">
 				<Timeline timelineItems={timelineItems} />
 			</div>
-			<div className="flex w-2/3 mx-auto">
+			<div className="flex justify-center w-2/3 mx-auto">
 				<Reveal axis={"y"}>
-					<div className="flex justify-center">
-						<CustomTextIconButton
-							icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl"
-							text="resume"
-							textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold"
-							height="desktopXXL:h-20 desktopL:h-16 h-12"
-							width="desktopXXL:w-52 desktopL:w-44 w-40"
-							handleClick={downloadResume}
-						/>
-					</div>
+					<CustomTextIconButton
+						icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl text-white"
+						text="resume"
+						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white"
+						styling="desktopXXL:h-20 desktopXXL:w-52 desktopL:h-16 h-12 desktopL:w-44 w-40 mx-auto bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200"
+						handleClick={downloadResume}
+						rippleColor="bg-white"
+					/>
 				</Reveal>
 			</div>
 		</div>

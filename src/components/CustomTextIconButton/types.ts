@@ -2,7 +2,7 @@ export type CustomTextIconButtonProps = {
 	icon: string;
 	text: string;
 	textStyling: string;
-	height: string;
-	width: string;
+	styling: string;
 	handleClick?: () => void;
+	rippleColor: string;
 };
