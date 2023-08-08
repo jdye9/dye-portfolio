@@ -28,8 +28,6 @@ module.exports = {
 				"light-purple": "#CDC1EE",
 				white: "#FFFFFF",
 				black: "#000000",
-				"opaque-black": "rgba(0, 0, 0, 0.35)",
-				dark: "#121212",
 			},
 			backgroundSize: {
 				"size-200": "200% 200%",

@@ -44,13 +44,13 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 						/>
 					)}
 				</span>
-				<h3 className="flex items-center mb-1 font-semibold text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md dark:text-white">
+				<h3 className="flex items-center mb-1 font-semibold text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md">
 					{timelineItem.title}
 				</h3>
-				<time className="block mb-2 text-xs font-normal leading-none text-gray-400 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:text-gray-500">
+				<time className="block mb-2 text-xs font-normal leading-none text-gray-400 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm">
 					{timelineItem.duration}
 				</time>
-				<div className="mb-4 text-xs font-normal text-gray-500 desktopXXL:text-3xl desktopL:text-2xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:text-gray-400">
+				<div className="mb-4 text-xs font-normal text-gray-500 desktopXXL:text-3xl desktopL:text-2xl desktopM:text-lg desktopS:text-md mobileL:text-sm">
 					<ul className="space-y-1 list-disc list-outside desktopXXL:ml-8">
 						{timelineItem.lineItems.map((lineItem) => (
 							<li key={lineItem}>{lineItem}</li>
