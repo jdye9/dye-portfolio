@@ -19,7 +19,7 @@ export const getSkills = async (): Promise<GetSkillsResponse> => {
 
 export const getExperiences = async (): Promise<GetExperiencesResponse> => {
 	const response = await fetch(
-		`http://dye-portfolio-service.onrender.com/experiences/`,
+		`https://dye-portfolio-service.onrender.com/experiences/`,
 		{
 			method: "GET",
 		}
@@ -32,7 +32,7 @@ export const getExperiences = async (): Promise<GetExperiencesResponse> => {
 
 export const getProjects = async (): Promise<GetProjectsResponse> => {
 	const response = await fetch(
-		`http://dye-portfolio-service.onrender.com/projects/`,
+		`https://dye-portfolio-service.onrender.com/projects/`,
 		{
 			method: "GET",
 		}
