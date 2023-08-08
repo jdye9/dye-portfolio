@@ -5,7 +5,7 @@ import {
 } from "./types";
 
 export const getSkills = async (): Promise<GetSkillsResponse> => {
-	const response = await fetch(`http://localhost:9000/skills/`, {
+	const response = await fetch(`https://dye-portfolio-api/skills/`, {
 		method: "GET",
 	});
 	if (response.ok) {
@@ -15,7 +15,7 @@ export const getSkills = async (): Promise<GetSkillsResponse> => {
 };
 
 export const getExperiences = async (): Promise<GetExperiencesResponse> => {
-	const response = await fetch(`http://localhost:9000/experiences/`, {
+	const response = await fetch(`http://dye-portfolio-api/experiences/`, {
 		method: "GET",
 	});
 	if (response.ok) {
@@ -25,7 +25,7 @@ export const getExperiences = async (): Promise<GetExperiencesResponse> => {
 };
 
 export const getProjects = async (): Promise<GetProjectsResponse> => {
-	const response = await fetch(`http://localhost:9000/projects/`, {
+	const response = await fetch(`http://dye-portfolio-api/projects/`, {
 		method: "GET",
 	});
 	if (response.ok) {
