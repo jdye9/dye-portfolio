@@ -20,15 +20,24 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 	const [timelineItems, setTimeLineItems] = useState<TimelineItem[]>([]);
 
 	useEffect(() => {
+		console.log(experiences);
 		if (experiences) {
+			console.log(experiences);
 			const orderedExperiences = [...experiences].sort(
-				(currentExperience, nextExperience) =>
-					new Date(nextExperience.startDate).getTime() -
-					new Date(currentExperience.startDate).getTime()
+				(currentExperience, nextExperience) => {
+					console.log(
+						new Date(nextExperience.startDate).getTime() -
+							new Date(currentExperience.startDate).getTime()
+					);
+					return (
+						new Date(nextExperience.startDate).getTime() -
+						new Date(currentExperience.startDate).getTime()
+					);
+				}
 			);
-			setOrderedExperiences(orderedExperiences.reverse());
+			setOrderedExperiences(orderedExperiences);
 		}
-	}, [experiences, setOrderedExperiences]);
+	}, [experiences]);
 
 	useEffect(() => {
 		if (orderedExperiences) {
