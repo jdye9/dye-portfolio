@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { CardProps } from "./types";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import Logo from "../../assets/white-logo.svg";
+import LightLogo from "../../assets/white-logo.svg";
+import DarkLogo from "../../assets/dark-logo.svg";
+import { useDarkMode } from "../../providers/DarkMode";
 
 export const Card = ({ media, title, description, styling }: CardProps) => {
 	const storage = getStorage();
@@ -9,6 +11,7 @@ export const Card = ({ media, title, description, styling }: CardProps) => {
 
 	const [downloadUrl, setDownloadUrl] = useState("");
 	const [loader, setLoader] = useState(true);
+	const isDarkMode = useDarkMode();
 
 	useEffect(() => {
 		getDownloadURL(imgRef)
@@ -31,7 +34,7 @@ export const Card = ({ media, title, description, styling }: CardProps) => {
 			>
 				{loader && (
 					<img
-						src={Logo}
+						src={isDarkMode.state.isDarkMode ? DarkLogo : LightLogo}
 						alt="logo"
 						className="animate-spin h-[25px] w-[25px]"
 					/>
@@ -40,10 +43,10 @@ export const Card = ({ media, title, description, styling }: CardProps) => {
 			</video>
 
 			<div className="p-5">
-				<h5 className="mb-2 text-sm font-bold tracking-tight text-white mobileS:text-base mobileM:text-xl desktopM:text-2xl desktopXL:text-3xl desktopXXL:text-4xl font-openSans">
+				<h5 className="mb-2 text-sm font-bold tracking-tight text-white mobileS:text-base mobileM:text-xl dark:text-[#1A1A40] desktopM:text-2xl desktopXL:text-3xl desktopXXL:text-4xl font-openSans">
 					{title}
 				</h5>
-				<p className="mb-3 text-xs font-normal text-white desktopXXL:text-2xl desktopXL:text-xl mobileS:text-sm mobileM:text-base desktopM:text-lg font-openSans">
+				<p className="mb-3 text-xs font-normal text-white desktopXXL:text-2xl desktopXL:text-xl dark:text-[#1A1A40] mobileS:text-sm mobileM:text-base desktopM:text-lg font-openSans">
 					{description}
 				</p>
 			</div>

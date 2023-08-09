@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { initializeApp } from "firebase/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+import { DarkModeProvider } from "./providers/DarkMode";
 
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -29,7 +30,9 @@ root.render(
 	<React.StrictMode>
 		<QueryClientProvider client={new QueryClient()}>
 			<ToastContainer />
-			<App />
+			<DarkModeProvider>
+				<App />
+			</DarkModeProvider>
 		</QueryClientProvider>
 	</React.StrictMode>
 );

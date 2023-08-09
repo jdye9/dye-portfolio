@@ -71,10 +71,10 @@ export const ContactCard = () => {
 	return (
 		<Reveal axis={"y"}>
 			<div className="w-11/12 px-4 py-8 mx-auto rounded desktopS:w-2/3 bg-gradient-to-br from-light-purple to-light-blue">
-				<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-center text-white font-openSans desktopM:text-4xl desktopXL:text-5xl">
+				<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-center text-white font-openSans desktopM:text-4xl desktopXL:text-5xl dark:text-[#1A1A40]">
 					Contact Me
 				</h2>
-				<p className="mb-8 font-normal text-center text-white font-openSans desktopM:text-xl desktopXL:text-2xl">
+				<p className="mb-8 font-normal text-center text-white dark:text-[#1A1A40] font-openSans desktopM:text-xl desktopXL:text-2xl">
 					Send me a message, I would love to connect!
 				</p>
 				<form
@@ -83,7 +83,7 @@ export const ContactCard = () => {
 					noValidate
 				>
 					<div>
-						<label className="block mb-2 text-sm font-medium text-white desktopM:text-xl desktopXL:text-2xl">
+						<label className="block mb-2 text-sm font-medium text-white dark:text-[#1A1A40] desktopM:text-xl desktopXL:text-2xl">
 							Name:
 						</label>
 						<input
@@ -92,7 +92,7 @@ export const ContactCard = () => {
 							})}
 							type="text"
 							id="name"
-							className="shadow-sm bg-gray-50 text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
+							className="shadow-sm bg-white dark:bg-[#1A1A40] dark:text-white text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white dark:focus:outline-[#1A1A40] focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
 							placeholder="Name..."
 						/>
 						{!!errors.name?.message && (
@@ -103,7 +103,7 @@ export const ContactCard = () => {
 						)}
 					</div>
 					<div>
-						<label className="block mb-2 text-sm font-medium text-white desktopM:text-xl desktopXL:text-2xl">
+						<label className="block mb-2 text-sm font-medium dark:text-[#1A1A40] text-white desktopM:text-xl desktopXL:text-2xl">
 							Email:
 						</label>
 						<input
@@ -117,7 +117,7 @@ export const ContactCard = () => {
 							})}
 							type="email"
 							id="email"
-							className="shadow-sm bg-gray-50 text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
+							className="shadow-sm bg-white dark:bg-[#1A1A40] dark:text-white text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white dark:focus:outline-[#1A1A40] focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
 							placeholder="name@provider.com"
 						/>
 						{!!errors.email?.message && (
@@ -128,7 +128,7 @@ export const ContactCard = () => {
 						)}
 					</div>
 					<div>
-						<label className="block mb-2 text-sm font-medium text-white desktopM:text-xl desktopXL:text-2xl">
+						<label className="block mb-2 text-sm font-medium dark:text-[#1A1A40] text-white desktopM:text-xl desktopXL:text-2xl">
 							Subject:
 						</label>
 						<input
@@ -137,7 +137,7 @@ export const ContactCard = () => {
 							})}
 							type="text"
 							id="subject"
-							className="shadow-sm bg-gray-50 text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
+							className="shadow-sm bg-white dark:bg-[#1A1A40] dark:text-white text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white dark:focus:outline-[#1A1A40] focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
 							placeholder="Subject..."
 						/>
 						{!!errors.subject?.message && (
@@ -150,7 +150,7 @@ export const ContactCard = () => {
 					<div className="sm:col-span-2">
 						<label
 							htmlFor="message"
-							className="block mb-2 text-sm font-medium text-white desktopM:text-xl desktopXL:text-2xl"
+							className="block mb-2 text-sm font-medium text-white dark:text-[#1A1A40] desktopM:text-xl desktopXL:text-2xl"
 						>
 							Message:
 						</label>
@@ -160,7 +160,7 @@ export const ContactCard = () => {
 							})}
 							id="message"
 							rows={10}
-							className="resize-none shadow-sm bg-gray-50 text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
+							className="resize-none shadow-sm bg-white dark:bg-[#1A1A40] dark:text-white text-sm rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-white dark:focus:outline-[#1A1A40] focus:outline text-black block w-full p-2.5 desktopM:text-xl desktopXL:text-2xl"
 							placeholder="Leave a message..."
 						/>
 						{!!errors.message?.message && (
@@ -174,7 +174,7 @@ export const ContactCard = () => {
 						icon="fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
 						text="contact me"
 						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
-						styling="desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-52 desktopL:w-44 w-40 bg-white shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 mx-auto"
+						styling="desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-52 desktopL:w-44 w-40 bg-white shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 mx-auto dark:bg-[#1A1A40]"
 						rippleColor="bg-gradient-to-br from-light-purple to-light-blue"
 					/>
 				</form>

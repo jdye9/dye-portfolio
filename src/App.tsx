@@ -10,57 +10,61 @@ import {
 	ProjectsPage,
 	SkillsPage,
 } from "./pages";
+import { useDarkMode } from "./providers/DarkMode";
 
 export const App = () => {
 	const [selectedPage, setSelectedPage] = useState<Page>("HOME");
+	const darkModeContext = useDarkMode();
 
 	return (
-		<div className="app">
-			<Navbar pages={pages} selectedPage={selectedPage} />
-			<ButtonNav pages={pages} selectedPage={selectedPage} />
-			<div className="flex w-full flex-col pt-[80px]">
-				<LandingPage setSelectedPage={setSelectedPage} />
-				<div className={`w-11/12 mx-auto`}>
-					<Reveal axis={"y"}>
-						<LineGradient
-							h={"h-1"}
-							w={"w-full"}
-							color={"bg-gradient-to-br from-light-purple to-light-blue"}
-						/>
-					</Reveal>
+		<div className={darkModeContext.state.isDarkMode ? "dark" : ""}>
+			<div className="app bg-white dark:bg-[#1A1A40]">
+				<Navbar pages={pages} selectedPage={selectedPage} />
+				<ButtonNav pages={pages} selectedPage={selectedPage} />
+				<div className="flex w-full flex-col pt-[80px]">
+					<LandingPage setSelectedPage={setSelectedPage} />
+					<div className={`w-11/12 mx-auto`}>
+						<Reveal axis={"y"}>
+							<LineGradient
+								h={"h-1"}
+								w={"w-full"}
+								color={"bg-gradient-to-br from-light-purple to-light-blue"}
+							/>
+						</Reveal>
+					</div>
+					<ExperiencePage setSelectedPage={setSelectedPage} />
+					<div className={`w-11/12 mx-auto`}>
+						<Reveal axis={"y"}>
+							<LineGradient
+								h={"h-1"}
+								w={"w-full"}
+								color={"bg-gradient-to-br from-light-purple to-light-blue"}
+							/>
+						</Reveal>
+					</div>
+					<SkillsPage setSelectedPage={setSelectedPage} />
+					<div className={`w-11/12 mx-auto`}>
+						<Reveal axis={"y"}>
+							<LineGradient
+								h={"h-1"}
+								w={"w-full"}
+								color={"bg-gradient-to-br from-light-purple to-light-blue"}
+							/>
+						</Reveal>
+					</div>
+					<ProjectsPage setSelectedPage={setSelectedPage} />
+					<div className="w-11/12 mx-auto">
+						<Reveal axis={"y"}>
+							<LineGradient
+								h={"h-1"}
+								w={"w-full"}
+								color={"bg-gradient-to-br from-light-purple to-light-blue"}
+							/>
+						</Reveal>
+					</div>
+					<ContactPage setSelectedPage={setSelectedPage} />
+					<Footer />
 				</div>
-				<ExperiencePage setSelectedPage={setSelectedPage} />
-				<div className={`w-11/12 mx-auto`}>
-					<Reveal axis={"y"}>
-						<LineGradient
-							h={"h-1"}
-							w={"w-full"}
-							color={"bg-gradient-to-br from-light-purple to-light-blue"}
-						/>
-					</Reveal>
-				</div>
-				<SkillsPage setSelectedPage={setSelectedPage} />
-				<div className={`w-11/12 mx-auto`}>
-					<Reveal axis={"y"}>
-						<LineGradient
-							h={"h-1"}
-							w={"w-full"}
-							color={"bg-gradient-to-br from-light-purple to-light-blue"}
-						/>
-					</Reveal>
-				</div>
-				<ProjectsPage setSelectedPage={setSelectedPage} />
-				<div className="w-11/12 mx-auto">
-					<Reveal axis={"y"}>
-						<LineGradient
-							h={"h-1"}
-							w={"w-full"}
-							color={"bg-gradient-to-br from-light-purple to-light-blue"}
-						/>
-					</Reveal>
-				</div>
-				<ContactPage setSelectedPage={setSelectedPage} />
-				<Footer />
 			</div>
 		</div>
 	);

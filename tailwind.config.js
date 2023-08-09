@@ -12,6 +12,7 @@ module.exports = {
 		"./src/**/*.{html,ts}",
 		"./src/**/*.{html,tsx}",
 	],
+	darkMode: "class",
 	theme: {
 		extend: {
 			keyframes: {
