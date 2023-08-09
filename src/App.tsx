@@ -10,14 +10,16 @@ import {
 	ProjectsPage,
 	SkillsPage,
 } from "./pages";
-import { useDarkMode } from "./providers/DarkMode";
+import { useDarkMode } from "./providers";
 
 export const App = () => {
 	const [selectedPage, setSelectedPage] = useState<Page>("HOME");
-	const darkModeContext = useDarkMode();
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
 	return (
-		<div className={darkModeContext.state.isDarkMode ? "dark" : ""}>
+		<div className={isDarkMode ? "dark" : ""}>
 			<div className="app bg-white dark:bg-[#1A1A40]">
 				<Navbar pages={pages} selectedPage={selectedPage} />
 				<ButtonNav pages={pages} selectedPage={selectedPage} />

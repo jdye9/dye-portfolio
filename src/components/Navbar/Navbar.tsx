@@ -4,31 +4,34 @@ import LogoDark from "../../assets/dark-logo.svg";
 import { useState } from "react";
 import { NavbarProps } from "./types";
 import { LineGradient } from "../LineGradient";
-import { useDarkMode } from "../../providers/DarkMode";
+import { useDarkMode } from "../../providers";
 
 export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 	const [mobileMenu, setMobileMenu] = useState(false);
-	const darkModeContext = useDarkMode();
+	const {
+		state: { isDarkMode },
+		dispatch,
+	} = useDarkMode();
 
 	return (
 		<nav className="fixed top-0 left-0 z-20 w-full shadow bg-gradient-to-br from-light-purple to-light-blue">
 			<div className="flex flex-wrap p-4">
 				<div className="flex items-center justify-between w-full">
 					<img
-						src={darkModeContext.state.isDarkMode ? LogoDark : LogoLight}
+						src={isDarkMode ? LogoDark : LogoLight}
 						className="h-12 mr-3 hover:animate-spin"
 						alt="Logo"
 					/>
-					{!darkModeContext.state.isDarkMode && (
+					{!isDarkMode && (
 						<i
 							className="text-4xl text-white cursor-pointer fa-regular fa-sun"
-							onClick={() => darkModeContext.dispatch({ type: "switch" })}
+							onClick={() => dispatch({ type: "switch" })}
 						/>
 					)}
-					{darkModeContext.state.isDarkMode && (
+					{isDarkMode && (
 						<i
 							className="text-4xl dark:text-[#1A1A40] cursor-pointer fa-regular fa-moon"
-							onClick={() => darkModeContext.dispatch({ type: "switch" })}
+							onClick={() => dispatch({ type: "switch" })}
 						/>
 					)}
 					<div className="flex desktopS:hidden">
@@ -89,7 +92,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 									onClick={() => setMobileMenu(false)}
 									className={`rounded ${
 										selectedPage !== page
-											? "hover:bg-gray-100 dark:hover:bg-gray-600"
+											? "hover:bg-gray-100 dark:hover:bg-gray-500"
 											: ""
 									}`}
 								>

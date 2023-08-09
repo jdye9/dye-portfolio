@@ -4,7 +4,7 @@ import { TimelineItemProps } from "./types";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import DarkLogo from "../../../assets/dark-logo.svg";
 import LightLogo from "../../../assets/dark-logo.svg";
-import { useDarkMode } from "../../../providers/DarkMode";
+import { useDarkMode } from "../../../providers";
 
 export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 	const storage = getStorage();
@@ -12,7 +12,9 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 
 	const [downloadUrl, setDownloadUrl] = useState("");
 	const [loader, setLoader] = useState(true);
-	const darkModeContext = useDarkMode();
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
 	useEffect(() => {
 		if (downloadUrl) setLoader(false);
@@ -34,7 +36,7 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 				<span className="absolute flex items-center justify-center desktopXXL:w-24 desktopXXL:h-24 desktopL:w-16 desktopL:h-16 mobileL:w-12 mobileL:h-12 h-9 w-9 bg-gradient-to-br from-light-purple to-light-blue rounded-full desktopXXL:-left-12 desktopL:-left-8 mobileL:-left-6 mobileL:ring-8 -left-[18px] ring-4 ring-white dark:ring-[#1A1A40]">
 					{loader && (
 						<img
-							src={darkModeContext.state.isDarkMode ? DarkLogo : LightLogo}
+							src={isDarkMode ? DarkLogo : LightLogo}
 							alt="logo"
 							className="animate-spin h-[25px] w-[25px]"
 						/>

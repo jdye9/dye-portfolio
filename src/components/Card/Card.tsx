@@ -3,7 +3,7 @@ import { CardProps } from "./types";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import LightLogo from "../../assets/white-logo.svg";
 import DarkLogo from "../../assets/dark-logo.svg";
-import { useDarkMode } from "../../providers/DarkMode";
+import { useDarkMode } from "../../providers";
 
 export const Card = ({ media, title, description, styling }: CardProps) => {
 	const storage = getStorage();
@@ -11,7 +11,9 @@ export const Card = ({ media, title, description, styling }: CardProps) => {
 
 	const [downloadUrl, setDownloadUrl] = useState("");
 	const [loader, setLoader] = useState(true);
-	const isDarkMode = useDarkMode();
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
 	useEffect(() => {
 		getDownloadURL(imgRef)
@@ -34,7 +36,7 @@ export const Card = ({ media, title, description, styling }: CardProps) => {
 			>
 				{loader && (
 					<img
-						src={isDarkMode.state.isDarkMode ? DarkLogo : LightLogo}
+						src={isDarkMode ? DarkLogo : LightLogo}
 						alt="logo"
 						className="animate-spin h-[25px] w-[25px]"
 					/>
