@@ -3,7 +3,7 @@ import { Reveal } from "../../Reveal";
 import { TimelineItemProps } from "./types";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import DarkLogo from "../../../assets/dark-logo.svg";
-import LightLogo from "../../../assets/dark-logo.svg";
+import LightLogo from "../../../assets/white-logo.svg";
 import { useDarkMode } from "../../../providers";
 
 export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
@@ -55,7 +55,7 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 				<time className="block mb-2 text-xs font-normal text-gray-400 dark:text-gray-200 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
 					{timelineItem.duration}
 				</time>
-				<div className="mb-4 text-xs font-normal text-gray-500 dark:text-white desktopXXL:text-3xl desktopL:text-2xl desktopM:text-lg desktopS:text-md mobileL:text-sm">
+				<div className="mb-4 text-xs font-normal text-gray-400 dark:text-white desktopXXL:text-3xl desktopL:text-2xl desktopM:text-lg desktopS:text-md mobileL:text-sm">
 					<ul className="space-y-1 list-disc list-outside desktopXXL:ml-8">
 						{timelineItem.lineItems.map((lineItem) => (
 							<li key={lineItem}>{lineItem}</li>

@@ -92,7 +92,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 									onClick={() => setMobileMenu(false)}
 									className={`rounded ${
 										selectedPage !== page
-											? "hover:bg-gray-100 dark:hover:bg-gray-500"
+											? "hover:bg-gray-100 dark:hover:bg-gray-400"
 											: ""
 									}`}
 								>
