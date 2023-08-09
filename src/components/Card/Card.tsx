@@ -26,10 +26,10 @@ export const Card = ({ media, title, description, styling }: CardProps) => {
 
 	return (
 		<div
-			className={`${styling} border border-gray-200 rounded-lg shadow bg-gradient-to-br from-light-purple to-light-blue`}
+			className={`${styling} rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white group`}
 		>
 			<video
-				className="relative flex items-center mx-auto my-auto border border-gray-200 rounded-lg shadow -top-3 -left-6"
+				className="relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 group-hover:shadow-lg dark:group-hover:outline dark:shadow-none dark:group-hover:outline-2 dark:group-hover:outline-white"
 				autoPlay
 				loop
 				muted
