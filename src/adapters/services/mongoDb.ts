@@ -5,7 +5,7 @@ import {
 } from "./types";
 
 export const getSkills = async (): Promise<GetSkillsResponse> => {
-	const response = await fetch(`https://cyan-goat-slip.cyclic.app/skills/`, {
+	const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}skills/`, {
 		method: "GET",
 	});
 	if (response.ok) {
@@ -16,7 +16,7 @@ export const getSkills = async (): Promise<GetSkillsResponse> => {
 
 export const getExperiences = async (): Promise<GetExperiencesResponse> => {
 	const response = await fetch(
-		`https://cyan-goat-slip.cyclic.app/experiences/`,
+		`${process.env.REACT_APP_API_BASE_URL}experiences/`,
 		{
 			method: "GET",
 		}
@@ -28,9 +28,12 @@ export const getExperiences = async (): Promise<GetExperiencesResponse> => {
 };
 
 export const getProjects = async (): Promise<GetProjectsResponse> => {
-	const response = await fetch(`https://cyan-goat-slip.cyclic.app/projects/`, {
-		method: "GET",
-	});
+	const response = await fetch(
+		`${process.env.REACT_APP_API_BASE_URL}projects/`,
+		{
+			method: "GET",
+		}
+	);
 	if (response.ok) {
 		return response.json();
 	}

@@ -92,12 +92,12 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 			<div className="flex justify-center w-2/3 mx-auto">
 				<Reveal axis={"y"}>
 					<CustomTextIconButton
-						icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl text-white"
+						icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl text-white dark:text-[#1A1A40]"
 						text="resume"
-						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white"
-						styling="desktopXXL:h-20 desktopXXL:w-52 desktopL:h-16 h-12 desktopL:w-44 w-40 mx-auto bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200"
+						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white dark:text-[#1A1A40]"
+						styling="desktopXXL:h-20 desktopXXL:w-52 desktopL:h-16 h-12 desktopL:w-44 w-40 mx-auto bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200  dark:outline dark:shadow-none dark:hover:shadow-none dark:outline-1 dark:hover:outline-2 dark:outline-white"
 						handleClick={downloadResume}
-						rippleColor="bg-white"
+						rippleColor="bg-white dark:bg-[#1A1A40]"
 					/>
 				</Reveal>
 			</div>
