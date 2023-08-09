@@ -52,7 +52,7 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 				<h3 className="flex items-center mb-1 font-semibold text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
 					{timelineItem.title}
 				</h3>
-				<time className="block mb-2 text-xs font-normal leading-none text-gray-400 dark:text-gray-200 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
+				<time className="block mb-2 text-xs font-normal text-gray-400 dark:text-gray-200 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
 					{timelineItem.duration}
 				</time>
 				<div className="mb-4 text-xs font-normal text-gray-500 dark:text-white desktopXXL:text-3xl desktopL:text-2xl desktopM:text-lg desktopS:text-md mobileL:text-sm">
