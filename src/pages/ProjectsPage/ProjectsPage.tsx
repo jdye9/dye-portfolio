@@ -34,16 +34,15 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 					{projects &&
 						projects.map((project) => (
 							<Reveal key={project._id} axis={"y"}>
-								<a href={project.url} rel="noreferrer" target="_blank">
-									<Card
-										media={project.media.ref}
-										title={project.title}
-										description={project.description}
-										styling={
-											"w-[200px] h-[225px] mobileS:w-[250px] mobileS:h-[275px] mobileM:w-[260px] mobileM:h-[300px] mobileL:w-[400px] mobileL:h-[350px] desktopS:w-[600px] desktopS:h-[450px] desktopM:w-[800px] desktopM:h-[575px] desktopL:w-[1000px] desktopL:h-[675px] desktopXL:w-[1100px] desktopXL:h-[750px] desktopXXL:w-[1300px] desktopXXL:h-[875px] mx-auto"
-										}
-									/>
-								</a>
+								<Card
+									media={project.media.ref}
+									title={project.title}
+									description={project.description}
+									url={project.url}
+									styling={
+										"w-[200px] h-[225px] mobileS:w-[250px] mobileS:h-[275px] mobileM:w-[260px] mobileM:h-[300px] mobileL:w-[400px] mobileL:h-[350px] desktopS:w-[600px] desktopS:h-[450px] desktopM:w-[800px] desktopM:h-[575px] desktopL:w-[1000px] desktopL:h-[675px] desktopXL:w-[1100px] desktopXL:h-[750px] desktopXXL:w-[1300px] desktopXXL:h-[875px] mx-auto"
+									}
+								/>
 							</Reveal>
 						))}
 				</div>
