@@ -38,7 +38,7 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 				<div className="flex flex-wrap justify-center w-full gap-12">
-					{(!projects || projects.length === 0) && (
+					{!projects?.length && (
 						<Reveal axis={"y"}>
 							<img
 								src={isDarkMode ? LightLogo : DarkLogo}
@@ -47,7 +47,7 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 							/>
 						</Reveal>
 					)}
-					{projects?.length &&
+					{!!projects?.length &&
 						projects.map((project) => (
 							<Reveal key={project._id} axis={"y"}>
 								<Card
