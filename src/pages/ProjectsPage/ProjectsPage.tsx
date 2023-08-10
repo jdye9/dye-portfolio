@@ -3,11 +3,18 @@ import { useEffect, useRef } from "react";
 import { useInViewport } from "../../hooks/useInViewport";
 import { PageProps } from "../types";
 import { useGetProjects } from "../../hooks/useMongoDB";
+import DarkLogo from "../../assets/dark-logo.svg";
+import LightLogo from "../../assets/white-logo.svg";
+import { useDarkMode } from "../../providers";
 
 export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	const ref = useRef(null);
 	const inViewport = useInViewport(ref, 50);
 	const { data: projects } = useGetProjects();
+
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
 	useEffect(() => {
 		if (inViewport) setSelectedPage("PROJECTS");
@@ -31,7 +38,16 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 				<div className="flex flex-wrap justify-center w-full gap-12">
-					{projects &&
+					{(!projects || projects.length === 0) && (
+						<Reveal axis={"y"}>
+							<img
+								src={isDarkMode ? LightLogo : DarkLogo}
+								alt="logo"
+								className="animate-spin h-[100px] w-[100px] mx-auto"
+							/>
+						</Reveal>
+					)}
+					{projects?.length &&
 						projects.map((project) => (
 							<Reveal key={project._id} axis={"y"}>
 								<Card

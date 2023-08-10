@@ -3,6 +3,9 @@ import { useInViewport } from "../../hooks/useInViewport";
 import { PageProps } from "../types";
 import { LineDisplay, Reveal } from "../../components";
 import { useGetSkills } from "../../hooks/useMongoDB";
+import { useDarkMode } from "../../providers";
+import DarkLogo from "../../assets/dark-logo.svg";
+import LightLogo from "../../assets/white-logo.svg";
 
 export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 	const ref = useRef(null);
@@ -11,6 +14,10 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 	const [frameworks, setFrameworks] = useState<string[]>([]);
 	const [libraries, setLibraries] = useState<string[]>([]);
 	const { data: skills } = useGetSkills();
+
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
 	useEffect(() => {
 		if (skills) {
@@ -51,30 +58,43 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 				<div className="flex flex-col w-full gap-7">
-					<LineDisplay
-						offset="left"
-						xDirection="left"
-						width={"w-3/4"}
-						title={"Languages"}
-						perLine={3}
-						lineContent={languages}
-					/>
-					<LineDisplay
-						offset="right"
-						xDirection="right"
-						width={"w-3/4"}
-						title={"Frameworks"}
-						perLine={3}
-						lineContent={frameworks}
-					/>
-					<LineDisplay
-						offset="left"
-						xDirection="left"
-						width={"w-3/4"}
-						title={"Libraries"}
-						perLine={3}
-						lineContent={libraries}
-					/>
+					{(!skills || skills.length === 0) && (
+						<Reveal axis={"y"}>
+							<img
+								src={isDarkMode ? LightLogo : DarkLogo}
+								alt="logo"
+								className="animate-spin h-[100px] w-[100px] mx-auto"
+							/>
+						</Reveal>
+					)}
+					{skills?.length && (
+						<>
+							<LineDisplay
+								offset="left"
+								xDirection="left"
+								width={"w-3/4"}
+								title={"Languages"}
+								perLine={3}
+								lineContent={languages}
+							/>
+							<LineDisplay
+								offset="right"
+								xDirection="right"
+								width={"w-3/4"}
+								title={"Frameworks"}
+								perLine={3}
+								lineContent={frameworks}
+							/>
+							<LineDisplay
+								offset="left"
+								xDirection="left"
+								width={"w-3/4"}
+								title={"Libraries"}
+								perLine={3}
+								lineContent={libraries}
+							/>
+						</>
+					)}
 				</div>
 			</div>
 		</div>

@@ -7,6 +7,9 @@ import { saveAs } from "file-saver";
 import { useGetExperiences } from "../../hooks/useMongoDB";
 import { Experience } from "./types";
 import { TimelineItem } from "../../components/Timeline/types";
+import DarkLogo from "../../assets/dark-logo.svg";
+import LightLogo from "../../assets/white-logo.svg";
+import { useDarkMode } from "../../providers";
 
 export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 	const ref = useRef(null);
@@ -18,6 +21,9 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 		[]
 	);
 	const [timelineItems, setTimeLineItems] = useState<TimelineItem[]>([]);
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
 	useEffect(() => {
 		if (experiences) {
@@ -86,21 +92,34 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 			</div>
-			<div className="flex w-2/3 mx-auto">
-				<Timeline timelineItems={timelineItems} />
-			</div>
-			<div className="flex justify-center w-2/3 mx-auto">
+			{timelineItems.length === 0 && (
 				<Reveal axis={"y"}>
-					<CustomTextIconButton
-						icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl text-white dark:text-[#1A1A40]"
-						text="resume"
-						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white dark:text-[#1A1A40]"
-						styling="desktopXXL:h-20 desktopXXL:w-52 desktopL:h-16 h-12 desktopL:w-44 w-40 mx-auto bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200  dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white"
-						handleClick={downloadResume}
-						rippleColor="bg-white dark:bg-[#1A1A40]"
+					<img
+						src={isDarkMode ? LightLogo : DarkLogo}
+						alt="logo"
+						className="animate-spin h-[100px] w-[100px] mx-auto"
 					/>
 				</Reveal>
-			</div>
+			)}
+			{timelineItems.length && (
+				<>
+					<div className="flex w-2/3 mx-auto">
+						<Timeline timelineItems={timelineItems} />
+					</div>
+					<div className="flex justify-center w-2/3 mx-auto">
+						<Reveal axis={"y"}>
+							<CustomTextIconButton
+								icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl text-white dark:text-[#1A1A40]"
+								text="resume"
+								textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white dark:text-[#1A1A40]"
+								styling="desktopXXL:h-20 desktopXXL:w-52 desktopL:h-16 h-12 desktopL:w-44 w-40 mx-auto bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200  dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white"
+								handleClick={downloadResume}
+								rippleColor="bg-white dark:bg-[#1A1A40]"
+							/>
+						</Reveal>
+					</div>
+				</>
+			)}
 		</div>
 	);
 };
