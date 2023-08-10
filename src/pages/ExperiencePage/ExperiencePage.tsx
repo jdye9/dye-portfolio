@@ -92,7 +92,7 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 			</div>
-			{timelineItems.length === 0 && (
+			{!timelineItems.length && (
 				<Reveal axis={"y"}>
 					<img
 						src={isDarkMode ? LightLogo : DarkLogo}
@@ -101,7 +101,7 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 					/>
 				</Reveal>
 			)}
-			{timelineItems.length && (
+			{!!timelineItems.length && (
 				<>
 					<div className="flex w-2/3 mx-auto">
 						<Timeline timelineItems={timelineItems} />

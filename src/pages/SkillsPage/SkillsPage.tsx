@@ -58,7 +58,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 				</div>
 				<div className="flex flex-col w-full gap-7">
-					{(!skills || skills.length === 0) && (
+					{!skills?.length && (
 						<Reveal axis={"y"}>
 							<img
 								src={isDarkMode ? LightLogo : DarkLogo}
@@ -67,7 +67,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 							/>
 						</Reveal>
 					)}
-					{skills?.length && (
+					{!!skills?.length && (
 						<>
 							<LineDisplay
 								offset="left"
