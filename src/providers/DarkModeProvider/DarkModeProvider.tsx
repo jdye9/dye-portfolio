@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import { DarkModeAction, DarkModeContext, DarkModeState } from "./types";
 
-const initialState: DarkModeState = { isDarkMode: false };
+const initialState: DarkModeState = { isDarkMode: true };
 const Context = createContext<DarkModeContext>({
 	state: initialState,
 	dispatch: () => null,
