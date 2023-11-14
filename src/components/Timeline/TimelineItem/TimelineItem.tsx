@@ -49,7 +49,7 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 						/>
 					)}
 				</span>
-				<h3 className="flex items-center mb-1 font-semibold text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
+				<h3 className="flex items-center mb-1 font-semibold leading-relaxed text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue desktopXXL:leading-relaxed desktopXL:leading-relaxed desktopL:leading-relaxed desktopM:leading-relaxed desktopS:leading-relaxed mobileL:leading-relaxed mobileM:leading-relaxed mobileS:leading-relaxed">
 					{timelineItem.title}
 				</h3>
 				<time className="block mb-2 text-xs font-normal text-gray-400 dark:text-gray-200 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
