@@ -27,7 +27,7 @@ export const LandingPage = ({ setSelectedPage }: PageProps) => {
 					</Reveal>
 					<Reveal axis={"y"}>
 						<div className="flex w-full mx-auto flex-wrap font-openSans leading-tight font-extrabold text-left desktopXXL:text-[80px] desktopXL:text-[60px] desktopL:text-[50px] desktopM:text-[45px] mobileL:text-[35px] mobileM:text-[30px] text-[25px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
-							a UI Engineer based in the Bay Area.
+							UI Engineer
 						</div>
 					</Reveal>
 					<Reveal axis={"y"}>
