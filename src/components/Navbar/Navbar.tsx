@@ -19,7 +19,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 				<div className="flex items-center justify-between w-full">
 					<img
 						src={isDarkMode ? LogoDark : LogoLight}
-						className="h-12 mr-3 hover:animate-spin"
+						className="h-[40px] hover:animate-spin"
 						alt="Logo"
 					/>
 					{!isDarkMode && (
