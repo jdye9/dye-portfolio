@@ -20,7 +20,7 @@ export const Socials = () => {
 				<AnchorLink href="#CONTACT" offset={80}>
 					<CustomTextIconButton
 						icon="fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-white dark:text-[#1A1A40]"
-						text="contact me"
+						text="contact"
 						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white dark:text-[#1A1A40]"
 						styling="desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-52 desktopL:w-44 w-40 bg-gradient-to-br from-light-purple to-light-blue shadow-gray-200 hover:shadow-lg hover:shadow-gray-200 dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white mx-left"
 						rippleColor="bg-white dark:bg-[#1A1A40]"

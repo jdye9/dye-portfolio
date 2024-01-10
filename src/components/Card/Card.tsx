@@ -35,7 +35,7 @@ export const Card = ({
 			className={`${styling} rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white group`}
 		>
 			<video
-				className="relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 group-hover:shadow-lg dark:group-hover:outline dark:shadow-none dark:group-hover:outline-2 dark:group-hover:outline-white"
+				className="relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 dark:shadow-none"
 				autoPlay
 				loop
 				muted

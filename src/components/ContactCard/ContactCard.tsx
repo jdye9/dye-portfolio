@@ -172,7 +172,7 @@ export const ContactCard = () => {
 					</div>
 					<CustomTextIconButton
 						icon="fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
-						text="contact me"
+						text="send"
 						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
 						styling="desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-52 desktopL:w-44 w-40 bg-white shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 mx-auto dark:bg-[#1A1A40] dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white"
 						rippleColor="bg-gradient-to-br from-light-purple to-light-blue"
