@@ -61,7 +61,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 						{pages.map((page) => (
 							<AnchorLink
 								href={`#${page}`}
-								offset="80"
+								offset="72"
 								className="transition-all hover:duration-500 hover:ease-in-out hover:scale-110"
 								key={page}
 							>
@@ -88,11 +88,11 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 							{pages.map((page) => (
 								<AnchorLink
 									href={`#${page}`}
-									offset="80"
+									offset="72"
 									onClick={() => setMobileMenu(false)}
 									className={`rounded ${
 										selectedPage !== page
-											? "hover:bg-gray-100 dark:hover:bg-gray-400"
+											? "hover:bg-gray-100 dark:hover:white"
 											: ""
 									}`}
 								>

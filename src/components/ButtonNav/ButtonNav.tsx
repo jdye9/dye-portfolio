@@ -4,7 +4,7 @@ import { ButtonNavProps } from "./types";
 export const ButtonNav = ({ pages, selectedPage }: ButtonNavProps) => {
 	const selectedPageIcon = (index: number) => (
 		<div
-			className={`hover:duration-500 hover:ease-in-out hover:scale-[130%] ${
+			className={`hover:duration-500 hover:ease-in-out hover:scale-[130%] transition-all duration-500 ${
 				index % 2 === 0 ? "hover:rotate-45" : "hover:-rotate-45"
 			}`}
 		>
@@ -20,7 +20,7 @@ export const ButtonNav = ({ pages, selectedPage }: ButtonNavProps) => {
 		<div
 			className={`relative hover:duration-500 hover:scale-[130%] ${
 				index % 2 === 0 ? "hover:rotate-45" : "hover:-rotate-45"
-			} ease-in-out bg-gradient-to-br from-light-purple to-light-blue w-3 h-3`}
+			} hover:ease-in-out transition-all duration-500  bg-gradient-to-br from-light-purple to-light-blue w-3 h-3`}
 		></div>
 	);
 	return (
