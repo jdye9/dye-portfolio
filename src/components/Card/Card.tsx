@@ -1,24 +1,44 @@
 import { useEffect, useState } from "react";
 import { CardProps } from "./types";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { useDarkMode } from "../../providers";
 
 export const Card = ({
-	media,
+	lightMedia,
+	darkMedia,
 	title,
 	description,
 	styling,
 	url,
 }: CardProps) => {
 	const storage = getStorage();
-	const imgRef = ref(storage, media);
+	const imgRefLight = ref(storage, lightMedia);
+	const imgRefDark = ref(storage, darkMedia);
+	const {
+		state: { isDarkMode },
+	} = useDarkMode();
 
-	const [downloadUrl, setDownloadUrl] = useState("");
+	const [downloadUrlLight, setDownloadUrlLight] = useState("");
+	const [downloadUrlDark, setDownloadUrlDark] = useState("");
+	const [initialLoad, setInitialLoad] = useState(true);
 
 	useEffect(() => {
-		getDownloadURL(imgRef).then((result) => {
-			setDownloadUrl(result);
-		});
-	}, [imgRef]);
+		if (initialLoad) {
+			getDownloadURL(imgRefLight).then((result) => {
+				setDownloadUrlLight(result);
+			});
+			setInitialLoad(false);
+		}
+	}, [imgRefLight, initialLoad]);
+
+	useEffect(() => {
+		if (initialLoad) {
+			getDownloadURL(imgRefDark).then((result) => {
+				setDownloadUrlDark(result);
+			});
+			setInitialLoad(false);
+		}
+	}, [imgRefDark, initialLoad]);
 
 	return (
 		<a href={url} rel="noreferrer" target="_blank">
@@ -26,15 +46,26 @@ export const Card = ({
 				className={`${styling} rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
 			>
 				<video
-					className="relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6"
+					className={`relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 ${
+						!!isDarkMode ? "hidden" : ""
+					}`}
 					loop
 					muted
 					autoPlay
-					src={downloadUrl}
-					preload="metadata"
-				>
-					<source src={downloadUrl} type="video/mp4"></source>
-				</video>
+					playsInline
+					src={downloadUrlLight}
+				/>
+				<video
+					className={`relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 ${
+						!isDarkMode ? "hidden" : ""
+					}`}
+					loop
+					muted
+					autoPlay
+					playsInline
+					src={downloadUrlDark}
+				/>
+
 				<div className="p-5">
 					<h5 className="mb-2 text-sm font-bold tracking-tight text-white mobileS:text-base mobileM:text-xl dark:text-[#1A1A40] desktopM:text-2xl desktopXL:text-3xl desktopXXL:text-4xl font-openSans">
 						{title}

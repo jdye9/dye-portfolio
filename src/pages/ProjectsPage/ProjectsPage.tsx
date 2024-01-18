@@ -51,11 +51,8 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 						projects.map((project) => (
 							<Reveal key={project._id} axis={"y"}>
 								<Card
-									media={
-										isDarkMode
-											? project.media.dark.ref
-											: project.media.light.ref
-									}
+									lightMedia={project.media.light.ref}
+									darkMedia={project.media.dark.ref}
 									title={project.title}
 									description={project.description}
 									url={project.url}
