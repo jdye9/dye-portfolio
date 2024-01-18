@@ -1,4 +1,5 @@
 import { Reveal, IconItem } from "..";
+import { useTheme } from "../../providers";
 import { LineDisplayProps } from "./types";
 
 export const LineDisplay = ({
@@ -9,10 +10,15 @@ export const LineDisplay = ({
 	lineContent,
 	xDirection,
 }: LineDisplayProps) => {
+	const {
+		state: { gradient },
+	} = useTheme();
 	return (
 		<div className={`${width} flex flex-col mx-auto rounded-lg full gap-5`}>
 			<Reveal axis={"y"}>
-				<div className="flex justify-center text-3xl font-bold leading-loose text-transparent desktopXXL:leading-loose desktopXL:leading-loose desktopL:leading-loose desktopM:leading-loose mobileM:leading-loose desktopXXL:text-8xl desktopXL:text-7xl desktopL:text-6xl desktopM:text-5xl mobileM:text-4xl font-openSans bg-clip-text bg-gradient-to-br from-light-purple to-light-blue">
+				<div
+					className={`flex justify-center text-3xl font-bold leading-loose text-transparent desktopXXL:leading-loose desktopXL:leading-loose desktopL:leading-loose desktopM:leading-loose mobileM:leading-loose desktopXXL:text-8xl desktopXL:text-7xl desktopL:text-6xl desktopM:text-5xl mobileM:text-4xl font-openSans bg-clip-text ${gradient}`}
+				>
 					{title}
 				</div>
 			</Reveal>
@@ -36,7 +42,7 @@ export const LineDisplay = ({
 											: index % 2 === 0
 											? "ml-auto"
 											: "mr-auto"
-									} flex justify-around w-5/6 rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue`}
+									} flex justify-around w-5/6 rounded-lg shadow-md ${gradient}`}
 								>
 									{items.map((item) => (
 										<Reveal axis={"x"} key={item} xDirection={xDirection}>

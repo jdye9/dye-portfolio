@@ -10,13 +10,13 @@ import {
 	ProjectsPage,
 	SkillsPage,
 } from "./pages";
-import { useDarkMode } from "./providers";
+import { useTheme } from "./providers";
 
 export const App = () => {
 	const [selectedPage, setSelectedPage] = useState<Page>("HOME");
 	const {
-		state: { isDarkMode },
-	} = useDarkMode();
+		state: { isDarkMode, gradient },
+	} = useTheme();
 
 	return (
 		<div className={isDarkMode ? "dark" : ""}>
@@ -27,41 +27,25 @@ export const App = () => {
 					<LandingPage setSelectedPage={setSelectedPage} />
 					<div className={`w-11/12 mx-auto`}>
 						<Reveal axis={"y"}>
-							<LineGradient
-								h={"h-1"}
-								w={"w-full"}
-								color={"bg-gradient-to-br from-light-purple to-light-blue"}
-							/>
+							<LineGradient h={"h-1"} w={"w-full"} color={gradient} />
 						</Reveal>
 					</div>
 					<ExperiencePage setSelectedPage={setSelectedPage} />
 					<div className={`w-11/12 mx-auto`}>
 						<Reveal axis={"y"}>
-							<LineGradient
-								h={"h-1"}
-								w={"w-full"}
-								color={"bg-gradient-to-br from-light-purple to-light-blue"}
-							/>
+							<LineGradient h={"h-1"} w={"w-full"} color={gradient} />
 						</Reveal>
 					</div>
 					<SkillsPage setSelectedPage={setSelectedPage} />
 					<div className={`w-11/12 mx-auto`}>
 						<Reveal axis={"y"}>
-							<LineGradient
-								h={"h-1"}
-								w={"w-full"}
-								color={"bg-gradient-to-br from-light-purple to-light-blue"}
-							/>
+							<LineGradient h={"h-1"} w={"w-full"} color={gradient} />
 						</Reveal>
 					</div>
 					<ProjectsPage setSelectedPage={setSelectedPage} />
 					<div className="w-11/12 mx-auto">
 						<Reveal axis={"y"}>
-							<LineGradient
-								h={"h-1"}
-								w={"w-full"}
-								color={"bg-gradient-to-br from-light-purple to-light-blue"}
-							/>
+							<LineGradient h={"h-1"} w={"w-full"} color={gradient} />
 						</Reveal>
 					</div>
 					<ContactPage setSelectedPage={setSelectedPage} />

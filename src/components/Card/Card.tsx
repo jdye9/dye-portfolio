@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CardProps } from "./types";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import { useDarkMode } from "../../providers";
+import { useTheme } from "../../providers";
 
 export const Card = ({
 	lightMedia,
@@ -15,8 +15,8 @@ export const Card = ({
 	const imgRefLight = ref(storage, lightMedia);
 	const imgRefDark = ref(storage, darkMedia);
 	const {
-		state: { isDarkMode },
-	} = useDarkMode();
+		state: { isDarkMode, gradient },
+	} = useTheme();
 
 	const [downloadUrlLight, setDownloadUrlLight] = useState("");
 	const [downloadUrlDark, setDownloadUrlDark] = useState("");
@@ -43,7 +43,7 @@ export const Card = ({
 	return (
 		<a href={url} rel="noreferrer" target="_blank">
 			<div
-				className={`${styling} rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
+				className={`${styling} rounded-lg shadow-md ${gradient} hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
 			>
 				<video
 					className={`relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 ${
