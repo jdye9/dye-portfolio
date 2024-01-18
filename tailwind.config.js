@@ -25,8 +25,6 @@ module.exports = {
 				ripple: "ripple 500ms linear",
 			},
 			colors: {
-				"light-blue": "#C9E2F8",
-				"light-purple": "#CDC1EE",
 				white: "#FFFFFF",
 				black: "#000000",
 			},

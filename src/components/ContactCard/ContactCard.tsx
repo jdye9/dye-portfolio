@@ -4,8 +4,12 @@ import emailjs from "@emailjs/browser";
 import { CustomTextIconButton } from "../CustomTextIconButton";
 import { Reveal } from "../Reveal";
 import { toast } from "react-toastify";
+import { useTheme } from "../../providers";
 
 export const ContactCard = () => {
+	const {
+		state: { gradient },
+	} = useTheme();
 	const {
 		handleSubmit,
 		register,
@@ -70,7 +74,9 @@ export const ContactCard = () => {
 
 	return (
 		<Reveal axis={"y"}>
-			<div className="w-11/12 px-4 py-8 mx-auto rounded desktopS:w-2/3 bg-gradient-to-br from-light-purple to-light-blue">
+			<div
+				className={`w-11/12 px-4 py-8 mx-auto rounded desktopS:w-2/3 ${gradient}`}
+			>
 				<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-center text-white font-openSans desktopM:text-4xl desktopXL:text-5xl dark:text-[#1A1A40]">
 					Contact Me
 				</h2>
@@ -171,11 +177,11 @@ export const ContactCard = () => {
 						)}
 					</div>
 					<CustomTextIconButton
-						icon="fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
+						icon={`fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-transparent bg-clip-text ${gradient}`}
 						text="send"
-						textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
+						textStyling={`desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-transparent bg-clip-text ${gradient}`}
 						styling="desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-52 desktopL:w-44 w-40 bg-white shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 mx-auto dark:bg-[#1A1A40] dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white"
-						rippleColor="bg-gradient-to-br from-light-purple to-light-blue"
+						rippleColor={gradient}
 					/>
 				</form>
 			</div>

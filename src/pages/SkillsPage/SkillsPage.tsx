@@ -3,7 +3,7 @@ import { useInViewport } from "../../hooks/useInViewport";
 import { PageProps } from "../types";
 import { LineDisplay, Reveal } from "../../components";
 import { useGetSkills } from "../../hooks/useMongoDB";
-import { useDarkMode } from "../../providers";
+import { useTheme } from "../../providers";
 import DarkLogo from "../../assets/dark-logo.svg";
 import LightLogo from "../../assets/white-logo.svg";
 
@@ -16,8 +16,8 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 	const { data: skills } = useGetSkills();
 
 	const {
-		state: { isDarkMode },
-	} = useDarkMode();
+		state: { isDarkMode, gradient },
+	} = useTheme();
 
 	useEffect(() => {
 		if (skills) {
@@ -51,7 +51,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 				<div className="absolute top-0 mx-auto">
 					<Reveal axis={"y"}>
 						<div
-							className={`font-openSans leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue`}
+							className={`font-openSans leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text ${gradient}`}
 						>
 							Skills
 						</div>

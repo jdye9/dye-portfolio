@@ -3,14 +3,14 @@ import { IconItemProps } from "./types";
 import { useEffect, useState } from "react";
 import LightLogo from "../../assets/white-logo.svg";
 import DarkLogo from "../../assets/dark-logo.svg";
-import { useDarkMode } from "../../providers";
+import { useTheme } from "../../providers";
 
 export const IconItem = ({ img }: IconItemProps) => {
 	const storage = getStorage();
 	const imgRef = ref(storage, img);
 	const {
 		state: { isDarkMode },
-	} = useDarkMode();
+	} = useTheme();
 
 	const [downloadUrl, setDownloadUrl] = useState("");
 	const [loader, setLoader] = useState(true);
