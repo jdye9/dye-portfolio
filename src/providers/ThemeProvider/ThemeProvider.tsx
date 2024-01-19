@@ -4,6 +4,7 @@ import { ThemeAction, ThemeContext, ThemeState } from "./types";
 const initialState: ThemeState = {
 	isDarkMode: true,
 	gradient: "bg-gradient-to-br from-[#CDC1EE] to-[#C9E2F8]",
+	darkGradient: "dark:bg-gradient-to-br from-[#CDC1EE] to-[#C9E2F8]",
 };
 const Context = createContext<ThemeContext>({
 	state: initialState,
@@ -15,6 +16,13 @@ const gradientList = [
 	"bg-gradient-to-br from-[#12C2E9] via-[#C471ED] to-[#F64F59]",
 	"bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]",
 	"bg-gradient-to-br from-[#B79891] to-[#94716B]",
+];
+const darkGradientList = [
+	"dark:bg-gradient-to-br from-[#CDC1EE] to-[#C9E2F8]",
+	"dark:bg-gradient-to-br from-[#EE9CA7] to-[#FFDDE1]",
+	"dark:bg-gradient-to-br from-[#12C2E9] via-[#C471ED] to-[#F64F59]",
+	"dark:bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]",
+	"dark:bg-gradient-to-br from-[#B79891] to-[#94716B]",
 ];
 
 export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
@@ -29,7 +37,11 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
 						colorIndex !== gradientList.length - 1 ? colorIndex + 1 : 0;
 					setColorIndex(newColorIndex);
 					console.log(newColorIndex);
-					return { ...state, gradient: gradientList[newColorIndex] };
+					return {
+						...state,
+						gradient: gradientList[newColorIndex],
+						darkGradient: darkGradientList[newColorIndex],
+					};
 				default:
 					return state;
 			}

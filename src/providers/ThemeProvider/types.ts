@@ -5,6 +5,7 @@ export type ThemeAction = {
 export type ThemeState = {
 	isDarkMode: boolean;
 	gradient: string;
+	darkGradient: string;
 };
 
 export type ThemeContext = {
