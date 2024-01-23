@@ -41,10 +41,10 @@ export const Card = ({
 	}, [imgRefDark, initialLoad]);
 
 	return (
-		<a href={url} rel="noreferrer" target="_blank">
-			<div
-				className={`${styling} rounded-lg shadow-md ${gradient} hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
-			>
+		<div
+			className={`${styling} rounded-lg shadow-md ${gradient} hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
+		>
+			<a href={url} rel="noreferrer" target="_blank">
 				<video
 					className={`relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 ${
 						!!isDarkMode ? "hidden" : ""
@@ -74,7 +74,7 @@ export const Card = ({
 						{description}
 					</p>
 				</div>
-			</div>
-		</a>
+			</a>
+		</div>
 	);
 };
