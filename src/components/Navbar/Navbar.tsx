@@ -63,7 +63,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 							<AnchorLink
 								href={`#${page}`}
 								offset="72"
-								className="transition-all hover:duration-500 hover:ease-in-out hover:scale-110"
+								className="transition-all duration-500 hover:duration-500 hover:ease-in-out hover:scale-110"
 								key={page}
 							>
 								{page}
