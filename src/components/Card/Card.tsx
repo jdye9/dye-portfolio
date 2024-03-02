@@ -15,6 +15,10 @@ export const Card = ({
 	const storage = getStorage();
 	const imgRef = ref(storage, media);
 
+	useEffect(() => {
+		console.log(media);
+	}, [media]);
+
 	const [downloadUrl, setDownloadUrl] = useState("");
 	const [loader, setLoader] = useState(true);
 	const {
@@ -22,6 +26,7 @@ export const Card = ({
 	} = useDarkMode();
 
 	useEffect(() => {
+		console.log(imgRef);
 		getDownloadURL(imgRef)
 			.then((result) => {
 				setLoader(false);

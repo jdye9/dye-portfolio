@@ -12,6 +12,10 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	const inViewport = useInViewport(ref, 50);
 	const { data: projects } = useGetProjects();
 
+	useEffect(() => {
+		console.log(projects);
+	}, [projects]);
+
 	const {
 		state: { isDarkMode },
 	} = useDarkMode();

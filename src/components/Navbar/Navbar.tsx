@@ -5,6 +5,7 @@ import { useState } from "react";
 import { NavbarProps } from "./types";
 import { LineGradient } from "../LineGradient";
 import { useDarkMode } from "../../providers";
+import { HamburgerMenu } from "./components";
 
 export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 	const [mobileMenu, setMobileMenu] = useState(false);
@@ -56,6 +57,10 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 								/>
 							</svg>
 						</button>
+						<HamburgerMenu
+							mobileMenu={mobileMenu}
+							setMobileMenu={setMobileMenu}
+						/>
 					</div>
 					<div className="items-center hidden gap-5 text-xl font-bold text-white dark:text-[#1A1A40] desktopS:flex font-openSans">
 						{pages.map((page) => (
