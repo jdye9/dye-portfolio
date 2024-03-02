@@ -1,60 +1,70 @@
 import { useEffect, useState } from "react";
 import { CardProps } from "./types";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import LightLogo from "../../assets/white-logo.svg";
-import DarkLogo from "../../assets/dark-logo.svg";
-import { useDarkMode } from "../../providers";
+import { useTheme } from "../../providers";
 
 export const Card = ({
-	media,
+	lightMedia,
+	darkMedia,
 	title,
 	description,
 	styling,
 	url,
 }: CardProps) => {
 	const storage = getStorage();
-	const imgRef = ref(storage, media);
-
-	useEffect(() => {
-		console.log(media);
-	}, [media]);
-
-	const [downloadUrl, setDownloadUrl] = useState("");
-	const [loader, setLoader] = useState(true);
+	const imgRefLight = ref(storage, lightMedia);
+	const imgRefDark = ref(storage, darkMedia);
 	const {
-		state: { isDarkMode },
-	} = useDarkMode();
+		state: { isDarkMode, gradient },
+	} = useTheme();
+
+	const [downloadUrlLight, setDownloadUrlLight] = useState("");
+	const [downloadUrlDark, setDownloadUrlDark] = useState("");
+	const [initialLoad, setInitialLoad] = useState(true);
 
 	useEffect(() => {
-		console.log(imgRef);
-		getDownloadURL(imgRef)
-			.then((result) => {
-				setLoader(false);
-				setDownloadUrl(result);
-			})
-			.catch(() => setLoader(false));
-	}, [imgRef]);
+		if (initialLoad) {
+			getDownloadURL(imgRefLight).then((result) => {
+				setDownloadUrlLight(result);
+			});
+			setInitialLoad(false);
+		}
+	}, [imgRefLight, initialLoad]);
+
+	useEffect(() => {
+		if (initialLoad) {
+			getDownloadURL(imgRefDark).then((result) => {
+				setDownloadUrlDark(result);
+			});
+			setInitialLoad(false);
+		}
+	}, [imgRefDark, initialLoad]);
 
 	return (
 		<div
-			className={`${styling} rounded-lg shadow-md bg-gradient-to-br from-light-purple to-light-blue hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white group`}
+			className={`${styling} rounded-lg shadow-md ${gradient} hover:shadow-lg dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
 		>
 			<a href={url} rel="noreferrer" target="_blank">
 				<video
-					className="relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 group-hover:shadow-lg dark:group-hover:outline dark:shadow-none dark:group-hover:outline-2 dark:group-hover:outline-white"
-					autoPlay
+					className={`relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 ${
+						!!isDarkMode ? "hidden" : ""
+					}`}
 					loop
 					muted
-				>
-					{loader && (
-						<img
-							src={isDarkMode ? DarkLogo : LightLogo}
-							alt="logo"
-							className="animate-spin h-[25px] w-[25px]"
-						/>
-					)}
-					{!loader && <source src={downloadUrl} type="video/mp4" />}
-				</video>
+					autoPlay
+					playsInline
+					src={downloadUrlLight}
+				/>
+				<video
+					className={`relative flex items-center mx-auto my-auto rounded-lg shadow-md -top-3 -left-6 ${
+						!isDarkMode ? "hidden" : ""
+					}`}
+					loop
+					muted
+					autoPlay
+					playsInline
+					src={downloadUrlDark}
+				/>
 
 				<div className="p-5">
 					<h5 className="mb-2 text-sm font-bold tracking-tight text-white mobileS:text-base mobileM:text-xl dark:text-[#1A1A40] desktopM:text-2xl desktopXL:text-3xl desktopXXL:text-4xl font-openSans">

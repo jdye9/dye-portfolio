@@ -27,9 +27,16 @@ export type GetProjectsResponse = {
 	title: string;
 	description: string;
 	media: {
-		_id: string;
-		fileName: string;
-		ref: string;
+		light: {
+			_id: string;
+			fileName: string;
+			ref: string;
+		};
+		dark: {
+			_id: string;
+			fileName: string;
+			ref: string;
+		};
 	};
 	url: string;
 }[];

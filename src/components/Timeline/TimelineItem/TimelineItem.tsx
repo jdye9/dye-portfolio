@@ -4,7 +4,7 @@ import { TimelineItemProps } from "./types";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import DarkLogo from "../../../assets/dark-logo.svg";
 import LightLogo from "../../../assets/white-logo.svg";
-import { useDarkMode } from "../../../providers";
+import { useTheme } from "../../../providers";
 
 export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 	const storage = getStorage();
@@ -13,8 +13,8 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 	const [downloadUrl, setDownloadUrl] = useState("");
 	const [loader, setLoader] = useState(true);
 	const {
-		state: { isDarkMode },
-	} = useDarkMode();
+		state: { isDarkMode, gradient, darkGradient },
+	} = useTheme();
 
 	useEffect(() => {
 		if (downloadUrl) setLoader(false);
@@ -33,7 +33,9 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 	return (
 		<Reveal axis={"y"}>
 			<li className="mb-10 ml-8 desktopL:ml-12 mobileL:ml-10">
-				<span className="absolute flex items-center justify-center desktopXXL:w-24 desktopXXL:h-24 desktopL:w-16 desktopL:h-16 mobileL:w-12 mobileL:h-12 h-9 w-9 bg-gradient-to-br from-light-purple to-light-blue rounded-full desktopXXL:-left-12 desktopL:-left-8 mobileL:-left-6 mobileL:ring-8 -left-[18px] ring-4 ring-white dark:ring-[#1A1A40]">
+				<span
+					className={`absolute flex items-center justify-center desktopXXL:w-24 desktopXXL:h-24 desktopL:w-16 desktopL:h-16 mobileL:w-12 mobileL:h-12 h-9 w-9 ${gradient} rounded-full desktopXXL:-left-12 desktopL:-left-8 mobileL:-left-6 mobileL:ring-8 -left-[18px] ring-4 ring-white dark:ring-[#1A1A40]`}
+				>
 					{loader && (
 						<img
 							src={isDarkMode ? DarkLogo : LightLogo}
@@ -49,10 +51,14 @@ export const TimelineItem = ({ timelineItem }: TimelineItemProps) => {
 						/>
 					)}
 				</span>
-				<h3 className="flex items-center mb-1 font-semibold text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
+				<h3
+					className={`flex items-center mb-1 font-semibold leading-relaxed text-gray-900 desktopXXL:ml-6 desktopXXL:text-5xl desktopXL:text-4xl desktopL:text-3xl desktopM:text-2xl desktopS:text-xl mobileL:text-lg text-md dark:bg-clip-text dark:text-transparent ${darkGradient} desktopXXL:leading-relaxed desktopXL:leading-relaxed desktopL:leading-relaxed desktopM:leading-relaxed desktopS:leading-relaxed mobileL:leading-relaxed mobileM:leading-relaxed mobileS:leading-relaxed`}
+				>
 					{timelineItem.title}
 				</h3>
-				<time className="block mb-2 text-xs font-normal text-gray-400 dark:text-gray-200 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-br from-light-purple to-light-blue">
+				<time
+					className={`block mb-2 text-xs font-normal text-gray-400 dark:text-gray-200 desktopXXL:ml-6 desktopXXL:text-3xl desktopXL:text-2xl desktopL:text-xl desktopM:text-lg desktopS:text-md mobileL:text-sm dark:bg-clip-text dark:text-transparent ${darkGradient}`}
+				>
 					{timelineItem.duration}
 				</time>
 				<div className="mb-4 text-xs font-normal text-gray-400 dark:text-white desktopXXL:text-3xl desktopL:text-2xl desktopM:text-lg desktopS:text-md mobileL:text-sm">

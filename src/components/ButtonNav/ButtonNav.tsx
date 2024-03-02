@@ -1,16 +1,20 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { ButtonNavProps } from "./types";
+import { useTheme } from "../../providers";
 
 export const ButtonNav = ({ pages, selectedPage }: ButtonNavProps) => {
+	const {
+		state: { gradient },
+	} = useTheme();
 	const selectedPageIcon = (index: number) => (
 		<div
-			className={`hover:duration-500 hover:ease-in-out hover:scale-[130%] ${
+			className={`hover:duration-500 hover:ease-in-out hover:scale-[130%] transition-all duration-500 ${
 				index % 2 === 0 ? "hover:rotate-45" : "hover:-rotate-45"
 			}`}
 		>
 			<div className={`relative bg-white dark:bg-[#1A1A40] h-3 w-3`}>
 				<div
-					className={`absolute bg-gradient-to-br from-light-purple to-light-blue w-6 h-6 left-[-50%] top-[-50%] z-[-1]`}
+					className={`absolute ${gradient} w-6 h-6 left-[-50%] top-[-50%] z-[-1]`}
 				></div>
 			</div>
 		</div>
@@ -20,7 +24,7 @@ export const ButtonNav = ({ pages, selectedPage }: ButtonNavProps) => {
 		<div
 			className={`relative hover:duration-500 hover:scale-[130%] ${
 				index % 2 === 0 ? "hover:rotate-45" : "hover:-rotate-45"
-			} ease-in-out bg-gradient-to-br from-light-purple to-light-blue w-3 h-3`}
+			} hover:ease-in-out transition-all duration-500 ${gradient} w-3 h-3`}
 		></div>
 	);
 	return (

@@ -4,24 +4,25 @@ import LogoDark from "../../assets/dark-logo.svg";
 import { useState } from "react";
 import { NavbarProps } from "./types";
 import { LineGradient } from "../LineGradient";
-import { useDarkMode } from "../../providers";
 import { HamburgerMenu } from "./components";
+import { useTheme } from "../../providers";
 
 export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 	const [mobileMenu, setMobileMenu] = useState(false);
 	const {
-		state: { isDarkMode },
+		state: { isDarkMode, gradient },
 		dispatch,
-	} = useDarkMode();
+	} = useTheme();
 
 	return (
-		<nav className="fixed top-0 left-0 z-20 w-full shadow bg-gradient-to-br from-light-purple to-light-blue">
+		<nav className={`fixed top-0 left-0 z-20 w-full shadow ${gradient}`}>
 			<div className="flex flex-wrap p-4">
 				<div className="flex items-center justify-between w-full">
 					<img
 						src={isDarkMode ? LogoDark : LogoLight}
-						className="h-12 mr-3 hover:animate-spin"
+						className="h-[40px] w-[40px] hover:animate-spin hover:cursor-pointer"
 						alt="Logo"
+						onClick={() => dispatch({ type: "color" })}
 					/>
 					{!isDarkMode && (
 						<i
@@ -66,8 +67,8 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 						{pages.map((page) => (
 							<AnchorLink
 								href={`#${page}`}
-								offset="80"
-								className="transition-all hover:duration-500 hover:ease-in-out hover:scale-110"
+								offset="72"
+								className="transition-all duration-500 hover:duration-500 hover:ease-in-out hover:scale-110"
 								key={page}
 							>
 								{page}
@@ -93,19 +94,19 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 							{pages.map((page) => (
 								<AnchorLink
 									href={`#${page}`}
-									offset="80"
+									offset="72"
 									onClick={() => setMobileMenu(false)}
 									className={`rounded ${
 										selectedPage !== page
-											? "hover:bg-gray-100 dark:hover:bg-gray-400"
+											? "hover:bg-gray-100 dark:hover:white"
 											: ""
 									}`}
 								>
 									<li
 										className={`w-full px-1 mx-auto rounded ${
 											selectedPage === page
-												? "bg-gradient-to-br from-light-purple to-light-blue text-white dark:text-[#1A1A40]"
-												: "text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue"
+												? `${gradient} text-white dark:text-[#1A1A40]`
+												: `text-transparent bg-clip-text ${gradient}`
 										}`}
 									>
 										{page}

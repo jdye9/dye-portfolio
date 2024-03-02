@@ -5,7 +5,7 @@ import { PageProps } from "../types";
 import { useGetProjects } from "../../hooks/useMongoDB";
 import DarkLogo from "../../assets/dark-logo.svg";
 import LightLogo from "../../assets/white-logo.svg";
-import { useDarkMode } from "../../providers";
+import { useTheme } from "../../providers";
 
 export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	const ref = useRef(null);
@@ -17,8 +17,8 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	}, [projects]);
 
 	const {
-		state: { isDarkMode },
-	} = useDarkMode();
+		state: { isDarkMode, gradient },
+	} = useTheme();
 
 	useEffect(() => {
 		if (inViewport) setSelectedPage("PROJECTS");
@@ -35,7 +35,7 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 				<div className="absolute top-0 mx-auto">
 					<Reveal axis={"y"}>
 						<div
-							className={`font-openSans leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text bg-gradient-to-br from-light-purple to-light-blue`}
+							className={`font-openSans leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text ${gradient}`}
 						>
 							Projects
 						</div>
@@ -55,7 +55,8 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 						projects.map((project) => (
 							<Reveal key={project._id} axis={"y"}>
 								<Card
-									media={project.media.ref}
+									lightMedia={project.media.light.ref}
+									darkMedia={project.media.dark.ref}
 									title={project.title}
 									description={project.description}
 									url={project.url}
