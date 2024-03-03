@@ -24,40 +24,19 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 						alt="Logo"
 						onClick={() => dispatch({ type: "color" })}
 					/>
-					{!isDarkMode && (
+					{isDarkMode && (
 						<i
-							className="text-4xl text-white cursor-pointer fa-regular fa-sun"
+							className="text-4xl text-[#1A1A40] cursor-pointer fa-regular fa-sun"
 							onClick={() => dispatch({ type: "switch" })}
 						/>
 					)}
-					{isDarkMode && (
+					{!isDarkMode && (
 						<i
-							className="text-4xl dark:text-[#1A1A40] cursor-pointer fa-regular fa-moon"
+							className="text-4xl text-white cursor-pointer fa-regular fa-moon"
 							onClick={() => dispatch({ type: "switch" })}
 						/>
 					)}
 					<div className="flex desktopS:hidden">
-						<button
-							type="button"
-							className="flex items-center justify-center w-10 h-10 p-2 text-sm text-white dark:text-[#1A1A40] rounded-lg desktopS:hidden"
-							onClick={() => setMobileMenu(!mobileMenu)}
-						>
-							<svg
-								className="w-5 h-5"
-								aria-hidden="true"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 17 14"
-							>
-								<path
-									stroke="currentColor"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M1 1h15M1 7h15M1 13h15"
-								/>
-							</svg>
-						</button>
 						<HamburgerMenu
 							mobileMenu={mobileMenu}
 							setMobileMenu={setMobileMenu}
@@ -90,7 +69,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 					<div
 						className={`w-full items-center justify-between desktopS:hidden flex`}
 					>
-						<ul className="flex flex-col w-full gap-1 p-4 mt-5 text-xl font-bold bg-white dark:bg-[#1A1A40] border rounded font-openSans">
+						<ul className="flex flex-col w-full gap-1 p-4 mt-5 text-xl font-bold bg-white dark:bg-[#1A1A40] rounded font-openSans">
 							{pages.map((page) => (
 								<AnchorLink
 									href={`#${page}`}

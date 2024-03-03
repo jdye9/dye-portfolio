@@ -36,7 +36,6 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
 					const newColorIndex =
 						colorIndex !== gradientList.length - 1 ? colorIndex + 1 : 0;
 					setColorIndex(newColorIndex);
-					console.log(newColorIndex);
 					return {
 						...state,
 						gradient: gradientList[newColorIndex],
