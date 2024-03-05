@@ -9,6 +9,7 @@ import { useTheme } from "../../providers";
 
 export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 	const [mobileMenu, setMobileMenu] = useState(false);
+	const [hamburgerDirection, setHamburgerDirection] = useState(false);
 	const {
 		state: { isDarkMode, gradient },
 		dispatch,
@@ -40,6 +41,8 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 						<HamburgerMenu
 							mobileMenu={mobileMenu}
 							setMobileMenu={setMobileMenu}
+							hamburgerDirection={hamburgerDirection}
+							setHamburgerDirection={setHamburgerDirection}
 						/>
 					</div>
 					<div className="items-center hidden gap-5 text-xl font-bold text-white dark:text-[#1A1A40] desktopS:flex font-openSans">
@@ -74,7 +77,10 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 								<AnchorLink
 									href={`#${page}`}
 									offset="72"
-									onClick={() => setMobileMenu(false)}
+									onClick={() => {
+										setMobileMenu(false);
+										setHamburgerDirection((prev) => !prev);
+									}}
 									className={`rounded ${
 										selectedPage !== page
 											? "hover:bg-gray-100 dark:hover:white"
