@@ -20,9 +20,33 @@ module.exports = {
 					"0%": { transform: "scale(0)", opacity: "0.75" },
 					"100%": { transform: "scale(4)", opacity: "0" },
 				},
+				x: {
+					"100%": {
+						transform: "translateX(calc(100vw - 60px))",
+					},
+				},
+				y: {
+					"100%": {
+						transform: "translateY(calc(100vh - 132px))",
+					},
+				},
+				negX: {
+					"100%": {
+						transform: "translateX(calc(-100vw + 60px))",
+					},
+				},
+				negY: {
+					"100%": {
+						transform: "translateY(calc(-100vh + 132px))",
+					},
+				},
 			},
 			animation: {
 				ripple: "ripple 500ms linear",
+				x: "x 7.5s linear infinite alternate",
+				y: "y 10s linear infinite alternate",
+				negX: "negX 7.5s linear infinite alternate",
+				negY: "negY 10s linear infinite alternate",
 			},
 			colors: {
 				white: "#FFFFFF",

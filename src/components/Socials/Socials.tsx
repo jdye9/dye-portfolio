@@ -21,7 +21,7 @@ export const Socials = () => {
 					rippleColor="bg-white dark:bg-[#1A1A40]"
 					styling={`desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-20 desktopL:w-16 w-12 hover:cursor-pointer ${gradient} dark:shadow-gray-800 shadow-gray-200 hover:shadow-lg hover:shadow-gray-200 dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
 				/>
-				<AnchorLink href="#CONTACT" offset={80}>
+				<AnchorLink href="#CONTACT" offset={72}>
 					<CustomTextIconButton
 						icon="fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-white dark:text-[#1A1A40]"
 						text="contact"
