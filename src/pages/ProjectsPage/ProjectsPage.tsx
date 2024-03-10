@@ -24,7 +24,7 @@ export const ProjectsPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="PROJECTS"
-			className={`relative flex flex-col justify-center w-full h-[calc(100vh-80px)] min-h-[350px] mobileS:min-h-[400px] mobileM:min-h-[500px] mobileL:min-h-[600px] desktopS:min-h-[700px] desktopM:min-h-[830px] desktopL:min-h-[900px] desktopXL:min-h-[1100px] desktopXXL:min-h-[1175px]`}
+			className={`relative flex flex-col justify-center w-full h-[calc(100vh-72px)] min-h-[350px] mobileS:min-h-[400px] mobileM:min-h-[500px] mobileL:min-h-[600px] desktopS:min-h-[700px] desktopM:min-h-[830px] desktopL:min-h-[900px] desktopXL:min-h-[1100px] desktopXXL:min-h-[1175px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">

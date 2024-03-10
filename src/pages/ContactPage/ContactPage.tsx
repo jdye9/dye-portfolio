@@ -20,7 +20,7 @@ export const ContactPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="CONTACT"
-			className={`relative flex flex-col justify-center w-full h-[calc(100vh-80px)] min-h-[975px] mobileS:min-h-[1000px] desktopS:min-h-[1025px] desktopM:min-h-[1175px] desktopL:min-h-[1250px] desktopXL:min-h-[1350px] desktopXXL:min-h-[1475px]`}
+			className={`relative flex flex-col justify-center w-full h-[calc(100vh-72px)] min-h-[975px] mobileS:min-h-[1000px] desktopS:min-h-[1025px] desktopM:min-h-[1175px] desktopL:min-h-[1250px] desktopXL:min-h-[1350px] desktopXXL:min-h-[1475px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">

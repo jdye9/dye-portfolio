@@ -28,15 +28,15 @@ export const HamburgerMenu = ({
 				></span>
 				<span
 					className={`transition-all duration-300 w-6 h-1 bg-white dark:bg-[#1A1A40] rounded ${
-						mobileMenu ? (hamburgerDirection ? "-rotate-45" : "rotate-45") : ""
+						mobileMenu ? (hamburgerDirection ? "rotate-45" : "-rotate-45") : ""
 					}`}
 				></span>
 				<span
 					className={`transition-all duration-300 w-6 h-1 bg-white dark:bg-[#1A1A40] rounded ${
 						mobileMenu
 							? hamburgerDirection
-								? "rotate-45 -translate-y-2"
-								: "-rotate-45 -translate-y-2"
+								? "-rotate-45 -translate-y-2"
+								: "rotate-45 -translate-y-2"
 							: ""
 					}`}
 				></span>
