@@ -62,6 +62,7 @@ module.exports = {
 		},
 		fontFamily: {
 			openSans: ["Open Sans", "sans-serif"],
+			chakraPetch: ["Chakra Petch", "sans-serif"],
 		},
 		screens: {
 			mobileS: "320px",

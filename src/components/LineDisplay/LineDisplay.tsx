@@ -17,7 +17,7 @@ export const LineDisplay = ({
 		<div className={`${width} flex flex-col mx-auto rounded-lg full gap-5`}>
 			<Reveal axis={"y"}>
 				<div
-					className={`flex justify-center text-3xl font-bold leading-loose text-transparent desktopXXL:leading-loose desktopXL:leading-loose desktopL:leading-loose desktopM:leading-loose mobileM:leading-loose desktopXXL:text-8xl desktopXL:text-7xl desktopL:text-6xl desktopM:text-5xl mobileM:text-4xl font-openSans bg-clip-text ${gradient}`}
+					className={`flex justify-center text-3xl font-bold leading-loose text-transparent desktopXXL:leading-loose desktopXL:leading-loose desktopL:leading-loose desktopM:leading-loose mobileM:leading-loose desktopXXL:text-8xl desktopXL:text-7xl desktopL:text-6xl desktopM:text-5xl mobileM:text-4xl font-chakraPetch bg-clip-text ${gradient}`}
 				>
 					{title}
 				</div>

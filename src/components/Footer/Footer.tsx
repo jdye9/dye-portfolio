@@ -14,7 +14,7 @@ export const Footer = () => {
 					alt="logo"
 					className="h-[30px] w-[30px]"
 				/>
-				<span className="text-base font-bold text-white dark:text-[#1A1A40] font-openSans">
+				<span className="text-base font-bold text-white dark:text-[#1A1A40] font-chakraPetch">
 					© 2023 Dye™
 				</span>
 			</div>

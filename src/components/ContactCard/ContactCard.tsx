@@ -77,10 +77,10 @@ export const ContactCard = () => {
 			<div
 				className={`w-11/12 px-4 py-8 mx-auto rounded desktopS:w-2/3 ${gradient}`}
 			>
-				<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-center text-white font-openSans desktopM:text-4xl desktopXL:text-5xl dark:text-[#1A1A40]">
+				<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-center text-white font-chakraPetch desktopM:text-4xl desktopXL:text-5xl dark:text-[#1A1A40]">
 					Contact Me
 				</h2>
-				<p className="mb-8 font-normal text-center text-white dark:text-[#1A1A40] font-openSans desktopM:text-xl desktopXL:text-2xl">
+				<p className="mb-8 font-normal text-center text-white dark:text-[#1A1A40] font-chakraPetch desktopM:text-xl desktopXL:text-2xl">
 					Send me a message, I would love to connect!
 				</p>
 				<form
@@ -179,7 +179,7 @@ export const ContactCard = () => {
 					<CustomTextIconButton
 						icon={`fas fa-paper-plane desktopXXL:text-4xl desktopL:text-3xl text-2xl text-transparent bg-clip-text ${gradient}`}
 						text="send"
-						textStyling={`desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-transparent bg-clip-text ${gradient}`}
+						textStyling={`desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-chakraPetch uppercase font-bold text-transparent bg-clip-text ${gradient}`}
 						styling="desktopXXL:h-20 desktopL:h-16 h-12 desktopXXL:w-52 desktopL:w-44 w-40 bg-white shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 mx-auto dark:bg-[#1A1A40] dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white"
 						rippleColor={gradient}
 					/>

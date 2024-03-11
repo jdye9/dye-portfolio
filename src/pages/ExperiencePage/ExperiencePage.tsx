@@ -85,7 +85,7 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 				<div className="absolute top-0 mx-auto">
 					<Reveal axis={"y"}>
 						<div
-							className={`font-openSans leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text ${gradient}`}
+							className={`font-chakraPetch leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text ${gradient}`}
 						>
 							Experience
 						</div>
@@ -111,7 +111,7 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 							<CustomTextIconButton
 								icon="fa-solid fa-download desktopXXL:text-4xl desktopM:text-3xl text-2xl text-white dark:text-[#1A1A40]"
 								text="resume"
-								textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-openSans uppercase font-bold text-white dark:text-[#1A1A40]"
+								textStyling="desktopXXL:text-2xl desktopXL:text-xl desktopM:text-lg text-sm font-chakraPetch uppercase font-bold text-white dark:text-[#1A1A40]"
 								styling={`desktopXXL:h-20 desktopXXL:w-52 desktopL:h-16 h-12 desktopL:w-44 w-40 mx-auto ${gradient} shadow-gray-200 hover:shadow-lg hover:shadow-gray-200  dark:hover:outline dark:shadow-none dark:hover:outline-2 dark:hover:outline-white`}
 								handleClick={downloadResume}
 								rippleColor="bg-white dark:bg-[#1A1A40]"

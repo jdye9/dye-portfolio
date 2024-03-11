@@ -37,14 +37,14 @@ export const LandingPage = ({ setSelectedPage }: PageProps) => {
 				<div className="flex flex-col justify-left">
 					<Reveal axis={"y"}>
 						<div
-							className={`flex w-full mx-auto font-openSans leading-tight font-extrabold text-left desktopXXL:text-[200px] desktopXL:text-[150px] desktopL:text-[110px] desktopM:text-[90px] mobileL:text-[70px] mobileM:text-[48px] text-[40px] text-transparent bg-clip-text ${gradient} z-20`}
+							className={`flex w-full mx-auto font-chakraPetch leading-tight font-extrabold text-left desktopXXL:text-[200px] desktopXL:text-[150px] desktopL:text-[110px] desktopM:text-[90px] mobileL:text-[70px] mobileM:text-[48px] text-[40px] text-transparent bg-clip-text ${gradient} z-20`}
 						>
 							Jared Dye
 						</div>
 					</Reveal>
 					<Reveal axis={"y"}>
 						<div
-							className={`flex w-full mx-auto flex-wrap font-openSans leading-tight font-extrabold text-left desktopXXL:text-[80px] desktopXL:text-[60px] desktopL:text-[50px] desktopM:text-[45px] mobileL:text-[35px] mobileM:text-[25px] text-[20px] text-transparent bg-clip-text ${gradient} z-20`}
+							className={`flex w-full mx-auto flex-wrap font-chakraPetch leading-tight font-extrabold text-left desktopXXL:text-[80px] desktopXL:text-[60px] desktopL:text-[50px] desktopM:text-[45px] mobileL:text-[35px] mobileM:text-[25px] text-[20px] text-transparent bg-clip-text ${gradient} z-20`}
 						>
 							UI Engineer
 						</div>
