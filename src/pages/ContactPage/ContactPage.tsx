@@ -27,7 +27,7 @@ export const ContactPage = ({ setSelectedPage }: PageProps) => {
 				<div className="absolute top-0 mx-auto">
 					<Reveal axis={"y"}>
 						<div
-							className={`font-openSans leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text ${gradient}`}
+							className={`font-chakraPetch leading-tight font-extrabold desktopXXL:text-[90px] desktopXL:text-[80px] desktopL:text-[70px] desktopM:text-[60px] desktopS:text-[50px] mobileL:text-[45px] mobileM:text-[40px] mobileS:text-[35px] text-[30px] text-transparent bg-clip-text ${gradient}`}
 						>
 							Contact
 						</div>

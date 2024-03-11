@@ -45,7 +45,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 							setHamburgerDirection={setHamburgerDirection}
 						/>
 					</div>
-					<div className="items-center hidden gap-5 text-xl font-bold text-white dark:text-[#1A1A40] desktopS:flex font-openSans">
+					<div className="items-center hidden gap-5 text-xl font-bold text-white dark:text-[#1A1A40] desktopS:flex font-chakraPetch">
 						{pages.map((page) => (
 							<AnchorLink
 								href={`#${page}`}
@@ -72,7 +72,7 @@ export const Navbar = ({ selectedPage, pages }: NavbarProps) => {
 					<div
 						className={`w-full items-center justify-between desktopS:hidden flex`}
 					>
-						<ul className="flex flex-col w-full gap-1 p-4 mt-5 text-xl font-bold bg-white dark:bg-[#1A1A40] rounded font-openSans">
+						<ul className="flex flex-col w-full gap-1 p-4 mt-5 text-xl font-bold bg-white dark:bg-[#1A1A40] rounded font-chakraPetch">
 							{pages.map((page) => (
 								<AnchorLink
 									href={`#${page}`}
