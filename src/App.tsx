@@ -23,7 +23,7 @@ export const App = () => {
 			<div className="app bg-white dark:bg-[#1A1A40]">
 				<Navbar pages={pages} selectedPage={selectedPage} />
 				<ButtonNav pages={pages} selectedPage={selectedPage} />
-				<div className="flex w-full flex-col pt-[72px]">
+				<div className="flex w-full flex-col pt-[72px] z-0">
 					<LandingPage setSelectedPage={setSelectedPage} />
 					<div className={`w-11/12 mx-auto`}>
 						<Reveal axis={"y"}>
