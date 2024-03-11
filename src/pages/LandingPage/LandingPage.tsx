@@ -21,7 +21,7 @@ export const LandingPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="HOME"
-			className={`flex relative flex-col justify-center w-full h-[calc(100vh-72px)] desktopXXL:min-h-[600px] desktopXL:min-h-[450px] desktopL:min-h-[350px] desktopM:min-h-[375px] mobileL:min-h-[320px] mobileM:min-h-[475px] mobileS:min-h-[400px] min-h-[400px]`}
+			className={`z-0 flex relative flex-col justify-center w-full h-[calc(100vh-72px)] desktopXXL:min-h-[600px] desktopXL:min-h-[450px] desktopL:min-h-[350px] desktopM:min-h-[375px] mobileL:min-h-[320px] mobileM:min-h-[475px] mobileS:min-h-[400px] min-h-[400px]`}
 			ref={ref}
 		>
 			<div className="absolute top-0 animate-x">

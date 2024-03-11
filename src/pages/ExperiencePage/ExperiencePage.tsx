@@ -78,7 +78,7 @@ export const ExperiencePage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="EXPERIENCE"
-			className={`relative flex flex-col justify-center w-full h-[calc(100vh-72px)] desktopXXL:min-h-[850px] desktopXL:min-h-[775px] desktopL:min-h-[950px] desktopM:min-h-[850px] desktopS:min-h-[735px] mobileL:min-h-[850px] mobileM:min-h-[850px] mobileS:min-h-[925px] min-h-[1000px]`}
+			className={`z-0 relative flex flex-col justify-center w-full h-[calc(100vh-72px)] desktopXXL:min-h-[850px] desktopXL:min-h-[775px] desktopL:min-h-[950px] desktopM:min-h-[850px] desktopS:min-h-[735px] mobileL:min-h-[850px] mobileM:min-h-[850px] mobileS:min-h-[925px] min-h-[1000px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">

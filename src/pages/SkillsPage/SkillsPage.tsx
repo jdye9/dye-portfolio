@@ -44,7 +44,7 @@ export const SkillsPage = ({ setSelectedPage }: PageProps) => {
 	return (
 		<div
 			id="SKILLS"
-			className={`relative flex flex-col justify-center w-full h-[calc(100vh-72px)] min-h-[1000px] mobileS:min-h-[1030px] mobileM:min-h-[1095px] mobileL:min-h-[1150px] desktopS:min-h-[1320px] desktopM:min-h-[1490px] desktopL:min-h-[1750px] desktopXL:min-h-[2000px] desktopXXL:min-h-[2400px]`}
+			className={`z-0 relative flex flex-col justify-center w-full h-[calc(100vh-72px)] min-h-[1000px] mobileS:min-h-[1030px] mobileM:min-h-[1095px] mobileL:min-h-[1150px] desktopS:min-h-[1320px] desktopM:min-h-[1490px] desktopL:min-h-[1750px] desktopXL:min-h-[2000px] desktopXXL:min-h-[2400px]`}
 			ref={ref}
 		>
 			<div className="flex w-11/12 mx-auto mt-10">
