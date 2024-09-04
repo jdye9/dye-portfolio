@@ -46,7 +46,7 @@ export const LandingPage = ({ setSelectedPage }: PageProps) => {
 						<div
 							className={`flex w-full mx-auto flex-wrap font-chakraPetch leading-tight font-extrabold text-left desktopXXL:text-[80px] desktopXL:text-[60px] desktopL:text-[50px] desktopM:text-[45px] mobileL:text-[35px] mobileM:text-[25px] text-[20px] text-transparent bg-clip-text ${gradient} z-20`}
 						>
-							UI Engineer
+							Software Engineer
 						</div>
 					</Reveal>
 					<Reveal axis={"y"}>
